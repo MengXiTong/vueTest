@@ -7,6 +7,7 @@
     <div>{{count}}</div>
     <button @click="addCount()">+</button>
     <button @click="reduceCount()">-</button>
+    <div><button @click="goUserInfo()">用户信息</button></div>
   </div>
 </template>
 
@@ -40,6 +41,11 @@ export default {
     },
     reduceCount(){
       store.dispatch("reduce",'我是减');
+    },
+    goUserInfo(){
+      console.log('去用户信息界面');
+      console.log(this);
+      this.$router.replace({ name: 'userInfo'});
     }
   }
 };

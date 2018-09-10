@@ -1,14 +1,14 @@
 <template>
-  <div class="header">{{title}}</div>
+    <div class="header">{{title}}</div>
 </template>
 
 <script>
 export default {
-  props: ['title'],
+  props: ["title"],
   data() {
     return {};
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
