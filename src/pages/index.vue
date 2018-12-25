@@ -3,6 +3,7 @@
     <ui-header title='vue测试'></ui-header>
     <button @click="navigateTo('userInfo')">用户信息</button>
     <button @click="navigateTo('jqTest')">JQUERY测试</button>
+    
   </div>
 </template>
 

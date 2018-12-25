@@ -7,6 +7,9 @@ import $ from 'jquery'
 import VeeValidate, { Validator } from 'vee-validate'
 import zh_CN from 'vee-validate/dist/locale/zh_CN'
 import VueI18n from 'vue-i18n';
+import ElementUI from "element-ui";
+
+Vue.use(ElementUI);
 Vue.use(VueI18n)
 const i18n = new VueI18n({ locale: 'zh_CN', })
 Vue.use(VeeValidate, {
