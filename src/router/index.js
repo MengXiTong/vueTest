@@ -6,7 +6,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
+      path: '/',
       name: 'index',
       component: resolve => require(['@/pages/index'], resolve)
     },
@@ -14,6 +14,11 @@ export default new Router({
       path: '/userInfo',
       name: 'userInfo',
       component: resolve => require(['@/pages/userInfo'], resolve)
+    },
+    {
+      path: '/jqTest',
+      name: 'jqTest',
+      component: resolve => require(['@/pages/jqTest'], resolve)
     }
   ]
 })

@@ -1,27 +1,24 @@
 <template>
   <div class="hello">
     <ui-header title='vue测试'></ui-header>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <h3>大家好我是测试测试</h3>
-    <div>{{count}}</div>
-    <button @click="addCount()">+</button>
-    <button @click="reduceCount()">-</button>
-    <div><button @click="goUserInfo()">用户信息</button></div>
+    <button @click="navigateTo('userInfo')">用户信息</button>
+    <button @click="navigateTo('jqTest')">JQUERY测试</button>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from "vuex";
 import uiHeader from "@/components/uiHeader";
-import store from "@/store/index"
+import store from "@/store/index";
 
 export default {
   store: store,
   name: "index",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: "Welcome to Your Vue.js App",
+      url:
+        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2700762404,3403418546&fm=26&gp=0.jpg"
     };
   },
   components: {
@@ -36,18 +33,12 @@ export default {
     })
   },
   methods: {
-    addCount(){
-      store.dispatch("add",'我是加');
-    },
-    reduceCount(){
-      store.dispatch("reduce",'我是减');
-    },
-    goUserInfo(){
-      console.log('去用户信息界面');
-      console.log(this);
-      this.$router.replace({ name: 'userInfo'});
+    navigateTo(name) {
+      this.$router.replace({ name });
     }
-  }
+  },
+  created() {},
+  mounted() {}
 };
 </script>
 
