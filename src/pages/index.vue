@@ -3,7 +3,7 @@
     <ui-header title='vue测试'></ui-header>
     <button @click="navigateTo('userInfo')">用户信息</button>
     <button @click="navigateTo('jqTest')">JQUERY测试</button>
-    
+
   </div>
 </template>
 
@@ -11,6 +11,8 @@
 import { mapGetters, mapState } from "vuex";
 import uiHeader from "@/components/uiHeader";
 import store from "@/store/index";
+import { testTitle, setTitle } from "@/mixins/testMixins";
+import show from "@/mixins/classMixins"
 
 export default {
   store: store,
@@ -39,7 +41,11 @@ export default {
     }
   },
   created() {},
-  mounted() {}
+  mounted() {
+    console.log(testTitle);
+    let showNow = new show();
+    console.log(showNow.title);
+  }
 };
 </script>
 

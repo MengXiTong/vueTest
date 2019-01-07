@@ -25,6 +25,8 @@
 
 <script>
 import renderTest from "@/components/renderTest";
+import { testTitle, setTitle } from "@/mixins/testMixins";
+import show from "@/mixins/classMixins";
 
 export default {
   components: {
@@ -92,6 +94,15 @@ export default {
           }
         );
     });
+  },
+  mounted() {
+    // console.log(testTitle);
+    // setTitle("张三好");
+    // console.log(testTitle);
+    // let showNow = new show();
+    // console.log(showNow.title);
+    // showNow.setTitle('李四好');
+    // console.log(showNow.title);
   }
 };
 </script>
