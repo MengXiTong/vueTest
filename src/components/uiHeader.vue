@@ -1,14 +1,21 @@
 <template>
-    <div class="header">{{title}}</div>
+  <div class="header">{{title}}</div>
 </template>
 
 <script>
 export default {
-  props: ["title"],
+  props: {
+    title: {
+      type: String,
+      default: "首页"
+    }
+  },
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
+  created() {},
+  mounted() {}
 };
 </script>
 

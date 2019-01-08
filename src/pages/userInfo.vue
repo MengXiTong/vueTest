@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <ui-header title="用户信息"></ui-header>
-        <router-link to="/index">index</router-link>
-    </div>
+  <div>
+    <ui-header title="用户信息"></ui-header>
+    <router-link to="/">index</router-link>
+  </div>
 </template>
 
 <script>
