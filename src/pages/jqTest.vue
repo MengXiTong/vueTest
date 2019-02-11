@@ -1,18 +1,26 @@
 <template>
   <div>
-    <h2 id="el" style="display:none;">Essential Links</h2>
+    <h2 id="el"
+        style="display:none;">Essential Links</h2>
     <h3 id="hID">大家好我是测试测试</h3>
     <form id="register">
       <label for="password">Password:</label>
-      <input class="password" name="password" id="password" />
+      <input class="password"
+             name="password"
+             id="password" />
       <div class="password-meter">
         <div class="password-meter-message"> </div>
         <div class="password-meter-bg">
           <div class="password-meter-bar"></div>
         </div>
       </div>
-      <input v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" name="email" type="text" placeholder="Email">
-      <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+      <input v-validate="'required|email'"
+             :class="{'input': true, 'is-danger': errors.has('email') }"
+             name="email"
+             type="text"
+             placeholder="Email">
+      <span v-show="errors.has('email')"
+            class="help is-danger">{{ errors.first('email') }}</span>
     </form>
     <div id="btn-clean">清空</div>
     <div class="local-value"></div>
@@ -20,6 +28,15 @@
     <render-test tag="p"></render-test>
     <render-test tag="span"></render-test>
     <input @keydown.enter="search" />
+    <div style="display:flex;">
+      <div style="flex:1"
+           v-for="item in data">
+        <div v-for="itemSon in item.context">{{itemSon}}</div>
+      </div>
+      <div style="flex:1">
+        <button style="display:block;" v-for="num in data[0].context.length">按钮</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,6 +46,11 @@ import { testTitle, setTitle } from "@/mixins/testMixins";
 import show from "@/mixins/classMixins";
 
 export default {
+  data() {
+    return {
+      data: []
+    };
+  },
   components: {
     renderTest
   },
@@ -94,6 +116,32 @@ export default {
           }
         );
     });
+    this.data = [
+      {
+        id: "1",
+        classification: "动漫",
+        dage_id: "1",
+        context: ["火影忍者", "海蜇王", "死神", "七原罪"]
+      },
+      {
+        id: "2",
+        classification: "电影",
+        dage_id: "2",
+        context: ["战狼1", "战狼2", "红海", "美人鱼"]
+      },
+      {
+        id: "3",
+        classification: "电视剧",
+        dage_id: "3",
+        context: ["知否知否应是绿肥红瘦", "李卫当官1", "李卫当官2", "李卫当官3"]
+      },
+      {
+        id: "4",
+        classification: "综艺",
+        dage_id: "4",
+        context: ["快乐大本营", "天天向上", "我是大侦探", "明星大侦探"]
+      }
+    ];
   },
   mounted() {
     // console.log(testTitle);
@@ -109,5 +157,3 @@ export default {
 
 <style lang="less" scoped>
 </style>
-
-
