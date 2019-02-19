@@ -23,6 +23,14 @@ export default new Router({
         meta: {
           keepAlive: true // 需要缓存
         }
+      },
+      {
+        path: '/cssHtml',
+        name: 'cssHtml',
+        component: resolve => require(['@/pages/cssHtml'], resolve),
+        meta: {
+          keepAlive: true // 需要缓存
+        }
       }
     ]
   }]
