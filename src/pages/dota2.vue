@@ -14,6 +14,7 @@
         </el-option>
       </el-select>
     </div>
+    <div v-if="addition" class="fs16">加成：{{addition}}</div>
     <el-table :data="filterList" border style="width: 100%" height="340">
       <el-table-column fixed prop="chess" label="棋子">
       </el-table-column>
@@ -36,6 +37,33 @@
         list: [],
         spesList: ['矮人', '地精', '恶魔', '精灵', '巨魔', '龙', '娜迦', '人类', '野兽', '食人魔', '兽人', '亡灵', '元素'],
         classList: ['刺客', '德鲁伊', '恶魔猎手', '法师', '工匠', '猎人', '骑士', '萨满祭司', '术士', '战士'],
+        spesAction: {
+          '矮人': '2矮人攻击距离+300',
+          '地精': '3地精使随机一友军护甲15回血10，6地精全体地精护甲15回血10',
+          '恶魔': '只上场一个恶魔，该恶魔攻击+50%',
+          '精灵': '2精灵所有精灵20%闪避，4精灵25闪避，6精灵30闪避',
+          '巨魔': '2巨魔所有巨魔加攻速30，4巨魔加攻速30',
+          '龙': '3龙开局满魔，即开局就放技能',
+          '娜迦': '2娜迦全体魔抗+30，4娜迦魔抗+60',
+          '人类': '2人类所有人类普通攻击20%缴械3秒，4人类25%，6人类30%',
+          '野兽': '2野兽全体攻击+15%，4野兽+20%',
+          '食人魔': '食人魔血量+10%',
+          '兽人': '2兽人全体血量+250，4兽人+350',
+          '亡灵': '2亡灵敌方全体减甲8，4亡灵减甲10',
+          '元素': '2元素所有元素魔抗+30'
+        },
+        classAction: {
+          '刺客': '3刺客所有刺客有10%的4倍暴击，6刺客为20%',
+          '德鲁伊': '当两个不同德鲁伊在场时，德鲁伊升星只需两个相同即可',
+          '恶魔猎手': '敌方恶魔不加攻',
+          '法师': '3法师所有敌人魔抗-30，6法师魔抗-60',
+          '工匠': '2工匠所有工匠回10血，4工匠回20血',
+          '猎人': '3猎人所有猎人攻击+25%，6猎人攻击+35%',
+          '骑士': '2骑士所有骑士25%时间加盾，4骑士35%盾，6骑士45%盾',
+          '萨满祭司': '2萨满祭司开局随机羊一敌人6秒',
+          '术士': '3术士全体吸血+15%，6术士吸血+25%',
+          '战士': '3战士所有战士护甲+8，6战士护甲+10'
+        },
         filter: {
           spes: '',
           class: ''
@@ -46,6 +74,19 @@
       filterList() {
         return this.list.filter(item => item.spes.indexOf(this.filter.spes) >= 0 && item.class.indexOf(this.filter.class) >=
           0);
+      },
+      addition() {
+        let result = '';
+        if (this.spesAction[this.filter.spes]) {
+          result += this.spesAction[this.filter.spes];
+        }
+        if (this.classAction[this.filter.class]) {
+          if (result) {
+            result += ','
+          }
+          result += this.classAction[this.filter.class];
+        }
+        return result;
       }
     },
     methods: {
