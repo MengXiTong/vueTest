@@ -10,6 +10,7 @@ import VueI18n from 'vue-i18n';
 import ElementUI from "element-ui";
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(ElementUI);
 Vue.use(iView);

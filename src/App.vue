@@ -115,6 +115,28 @@
     .elips-loop(@n, (@i + 1));
   }
 
+  .margin-loop(50);
+
+  .margin-loop(@n, @i: 1) when (@n >=@i) {
+    .mal@{i} {
+      margin-left: @i*1px;
+    }
+
+    .mar@{i} {
+      margin-right: @i*1px;
+    }
+
+    .mat@{i} {
+      margin-top: @i*1px;
+    }
+
+    .mab@{i} {
+      margin-bottom: @i*1px;
+    }
+
+    .margin-loop(@n, (@i + 1));
+  }
+
   .tc {
     text-align: center;
   }

@@ -31,6 +31,14 @@ export default new Router({
         meta: {
           keepAlive: true // 需要缓存
         }
+      },
+      {
+        path: '/dota2',
+        name: 'dota2',
+        component: resolve => require(['@/pages/dota2'], resolve),
+        meta: {
+          keepAlive: true // 需要缓存
+        }
       }
     ]
   }]
