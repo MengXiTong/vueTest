@@ -16,15 +16,21 @@
     </div>
     <div v-if="addition" class="fs16">加成：{{addition}}</div>
     <el-table :data="filterList" border style="width: 100%" height="340">
-      <el-table-column fixed prop="chess" label="棋子">
+      <el-table-column fixed label="棋子">
+        <template scope="scope">
+          <div @mouseover="handlePopHover(scope.row, $event)" @mouseout="handlePopOut(scope.row, $event)">{{scope.row.chess}}</div>
+        </template>   
       </el-table-column>
       <el-table-column prop="spes" label="种族">
       </el-table-column>
       <el-table-column prop="class" label="职业">
       </el-table-column>
-      <el-table-column prop="cost" label="价格">
+      <el-table-column prop="cost" label="价格" :formatter="costFormatter">
       </el-table-column>
     </el-table>
+    <el-popover trigger="hover" ref="touchPop" placement="left">
+      大家好
+    </el-popover>
   </div>
 </template>
 
@@ -127,7 +133,29 @@
       },
       storage(isSave) {
         window.localStorage['list-cache'] = isSave ? JSON.stringify(this.list) : [];
-      }
+      },
+      costFormatter(row, column, cellValue){
+        return cellValue+"元";
+      },
+      handlePopHover(row, event) {
+        let pop = this.$refs.touchPop;
+        pop.updatePopper();
+        pop.referenceElm = event.target;
+        pop.showPopper = true;
+        this.$nextTick(() => {
+          pop.popperJS._reference = event.target;
+          pop.popperJS.state.updateBound();
+          if (this.timerhide) clearInterval(this.timerhide);
+        });
+      },
+      handlePopOut(row, event) {
+        this.timerhide = setTimeout(() => {
+          this.$refs.touchPop.showPopper = false;
+        }, 500);
+        $('.el-popover').hover(() => {
+          if (this.timerhide) clearInterval(this.timerhide);
+        });
+      },
     },
     created() {
       //   this.$set(this, 'list', window.localStorage['list-cache']);

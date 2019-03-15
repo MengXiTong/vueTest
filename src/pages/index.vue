@@ -13,6 +13,8 @@
             <Icon type="ios-paper"></Icon>样式测试</MenuItem>
             <MenuItem name="4" to="/dota2">
             <Icon type="ios-paper"></Icon>dota2自走棋</MenuItem>
+            <MenuItem name="5" to="/vueTest">
+            <Icon type="ios-paper"></Icon>VUE测试</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">

@@ -39,6 +39,14 @@ export default new Router({
         meta: {
           keepAlive: true // 需要缓存
         }
+      },
+      {
+        path: '/vueTest',
+        name: 'vueTest',
+        component: resolve => require(['@/pages/vueTest'], resolve),
+        meta: {
+          keepAlive: true // 需要缓存
+        }
       }
     ]
   }]
