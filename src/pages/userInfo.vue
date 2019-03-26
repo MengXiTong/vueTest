@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ui-header title="用户信息"></ui-header>
+    <ui-header @back="goBack" @submit="submit" title="用户信息"></ui-header>
     <router-link to="/">index</router-link>
   </div>
 </template>
@@ -14,6 +14,14 @@ export default {
   },
   components: {
     uiHeader
+  },
+  methods:{
+    goBack(){
+      window.history.go(-1);
+    },
+    submit(data){
+      console.log(data);
+    }
   },
   created() {
     console.log("用户信息");

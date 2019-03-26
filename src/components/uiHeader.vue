@@ -1,5 +1,9 @@
 <template>
-  <div class="header">{{title}}</div>
+  <div class="header row">
+    <div @click="$emit('back')">< 返回</div>
+    <div class="col" @click="clickContent()">{{title}}</div>
+    <div @click="$emit('submit','提交内容。。')">提交</div>
+  </div>
 </template>
 
 <script>
@@ -13,7 +17,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    clickContent(){
+      console.log('标题点击了');
+    }
+  },
   created() {},
   mounted() {}
 };

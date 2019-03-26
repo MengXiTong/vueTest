@@ -47,6 +47,14 @@ export default new Router({
         meta: {
           keepAlive: true // 需要缓存
         }
+      },
+      {
+        path: '/lodashTest',
+        name: 'lodashTest',
+        component: resolve => require(['@/pages/lodashTest'], resolve),
+        meta: {
+          keepAlive: true // 需要缓存
+        }
       }
     ]
   }]

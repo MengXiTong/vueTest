@@ -15,6 +15,8 @@
             <Icon type="ios-paper"></Icon>dota2自走棋</MenuItem>
             <MenuItem name="5" to="/vueTest">
             <Icon type="ios-paper"></Icon>VUE测试</MenuItem>
+            <MenuItem name="6" to="/lodashTest">
+            <Icon type="ios-paper"></Icon>Lodash测试</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">

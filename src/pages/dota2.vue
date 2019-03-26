@@ -17,7 +17,7 @@
     <div v-if="addition" class="fs16">加成：{{addition}}</div>
     <el-table :data="filterList" border style="width: 100%" height="340">
       <el-table-column fixed label="棋子">
-        <template scope="scope">
+        <template slot-scope="scope">
           <div @mouseover="handlePopHover(scope.row, $event)" @mouseout="handlePopOut(scope.row, $event)">{{scope.row.chess}}</div>
         </template>   
       </el-table-column>
