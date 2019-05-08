@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import uiHeader from "@/components/uiHeader";
+import uiHeader from '@/components/uiHeader';
 
 export default {
   data() {
@@ -15,16 +15,16 @@ export default {
   components: {
     uiHeader
   },
-  methods:{
-    goBack(){
+  methods: {
+    goBack() {
       window.history.go(-1);
     },
-    submit(data){
+    submit(data) {
       console.log(data);
     }
   },
   created() {
-    console.log("用户信息");
+    console.log('用户信息');
   }
 };
 </script>
