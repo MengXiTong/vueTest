@@ -21,6 +21,9 @@
           <div class="circular"></div>
         </div>
       </el-collapse-item>
+      <el-collapse-item title="input各类型使用" name="5">
+        <ui-input></ui-input>
+      </el-collapse-item>
     </el-collapse>
   </div>
   </div>
@@ -29,6 +32,7 @@
 <script>
 import transform from '@/components/transform';
 import echarts from '@/components/echarts';
+import uiInput from '@/components/uiInput';
 export default {
   data() {
     return {
@@ -37,7 +41,8 @@ export default {
   },
   components: {
     transform,
-    echarts
+    echarts,
+    uiInput
   },
   methods: {},
   created() {},
