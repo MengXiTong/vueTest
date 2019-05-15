@@ -24,6 +24,21 @@
       <el-collapse-item title="input各类型使用" name="5">
         <ui-input></ui-input>
       </el-collapse-item>
+      <el-collapse v-model="activeName" accordion>
+        <el-collapse-item title="树形控件" name="6">
+          <ui-tree></ui-tree>
+        </el-collapse-item>
+      </el-collapse>
+      <el-collapse v-model="activeName" accordion>
+        <el-collapse-item title="dialog组件的使用" name="7">
+          <ui-dialog></ui-dialog>
+        </el-collapse-item>
+      </el-collapse>
+      <el-collapse v-model="activeName" accordion>
+        <el-collapse-item title="ztree的使用" name="8">
+          <ztree></ztree>
+        </el-collapse-item>
+      </el-collapse>
     </el-collapse>
   </div>
   </div>
@@ -33,6 +48,9 @@
 import transform from '@/components/transform';
 import echarts from '@/components/echarts';
 import uiInput from '@/components/uiInput';
+import uiTree from '@/components/uiTree';
+import uiDialog from '@/components/dialog';
+import ztree from '@/components/ztree';
 export default {
   data() {
     return {
@@ -42,7 +60,10 @@ export default {
   components: {
     transform,
     echarts,
-    uiInput
+    uiInput,
+    uiTree,
+    uiDialog,
+    ztree
   },
   methods: {},
   created() {},

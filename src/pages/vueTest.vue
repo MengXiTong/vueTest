@@ -7,16 +7,10 @@
     <button @click="changeMsg">
       Change the Message
     </button>
-    <el-collapse v-model="activeName" accordion>
-      <el-collapse-item title="树形控件" name="1">
-        <ui-tree></ui-tree>
-      </el-collapse-item>
-    </el-collapse>
   </div>
 </template>
 
 <script>
-import uiTree from '@/components/uiTree';
 export default {
   data() {
     return {
@@ -79,9 +73,7 @@ export default {
       this.msg3 = this.$refs.msgDiv.innerHTML;
     }
   },
-  components: {
-    uiTree
-  }
+  components: {}
 };
 </script>
 

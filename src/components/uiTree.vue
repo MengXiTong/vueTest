@@ -105,6 +105,7 @@ export default {
   methods: {
     handleNodeClick(data, node) {
       console.log(data, node);
+      this.menuVisible = false;
     },
     handleNodeContextMenu(event, data, node, element) {
       console.log(event, data);
