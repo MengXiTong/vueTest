@@ -1,8 +1,5 @@
 <template>
-  <el-transfer style="text-align:left;"
-               v-model="value"
-               :data="data"
-               :titles="['Source', 'Target']"></el-transfer>
+  <el-transfer style="text-align:left;" v-model="value" :data="data" :titles="['Source', 'Target']"></el-transfer>
 </template>
 
 <script>
