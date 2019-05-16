@@ -39,6 +39,11 @@
           <ztree></ztree>
         </el-collapse-item>
       </el-collapse>
+      <el-collapse v-model="activeName" accordion>
+        <el-collapse-item title="transfer的使用" name="9">
+          <transfer></transfer>
+        </el-collapse-item>
+      </el-collapse>
     </el-collapse>
   </div>
   </div>
@@ -51,6 +56,7 @@ import uiInput from '@/components/uiInput';
 import uiTree from '@/components/uiTree';
 import uiDialog from '@/components/dialog';
 import ztree from '@/components/ztree';
+import transfer from '@/components/transfer';
 export default {
   data() {
     return {
@@ -63,7 +69,8 @@ export default {
     uiInput,
     uiTree,
     uiDialog,
-    ztree
+    ztree,
+    transfer
   },
   methods: {},
   created() {},
