@@ -13,6 +13,8 @@
 
 <script>
 export default {
+  name: 'dialogDemo',
+  inheritAttrs: false,
   data() {
     return {
       dialogVisible: false

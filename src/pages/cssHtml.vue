@@ -31,7 +31,7 @@
       </el-collapse>
       <el-collapse v-model="activeName" accordion>
         <el-collapse-item title="dialog组件的使用" name="7">
-          <ui-dialog></ui-dialog>
+          <ui-dialog title="dialogDemo"></ui-dialog>
         </el-collapse-item>
       </el-collapse>
       <el-collapse v-model="activeName" accordion>
