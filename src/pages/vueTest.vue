@@ -73,7 +73,22 @@ export default {
       this.msg3 = this.$refs.msgDiv.innerHTML;
     }
   },
-  components: {}
+  components: {},
+  mounted() {
+    console.log('测试先后：mounted');
+  },
+  created() {
+    window.onload = () => {
+      console.log('测试先后：onload');
+    };
+    $(function() {
+      console.log('测试先后：ready');
+    });
+    console.log('测试先后：created');
+    $(document).ready(function() {
+      console.log('测试先后：ready');
+    });
+  }
 };
 </script>
 

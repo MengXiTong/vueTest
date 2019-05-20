@@ -46,7 +46,6 @@
       </el-collapse>
     </el-collapse>
   </div>
-  </div>
 </template>
 
 <script>
