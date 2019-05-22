@@ -4,10 +4,14 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: __dirname,
   routes: [{
     path: '/',
     name: 'index',
-    component: resolve => require(['@/pages/index'], resolve),
+    component: resolve => require(['@/pages/index'], resolve), //这种方式进行懒加载已经Out了
+    // () => import(/* webpackChunkName: "index" */ '@/pages/index') 建议使用这种
+    // resolve => require.ensure([], () => resolve(require('@/pages/index')), 'index');
     children: [{
         path: '/userInfo',
         name: 'userInfo',

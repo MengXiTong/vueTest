@@ -2,10 +2,13 @@
   <div class="tree">
     <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" @node-contextmenu="handleNodeContextMenu" show-checkbox>
       <span class="custom-tree-node" slot-scope="{ node, data }">
-        <span v-show="!node.isEdit">
-          <i v-if="data.children && !node.expanded" class="el-icon-menu"></i>
-          <i v-else-if="data.children && node.expanded" class="el-icon-star-on"></i>
-          <i v-else class="el-icon-document"></i>
+        <span v-show="!node.isEdit" style="display:flex;align-items: center;">
+          <!-- <i v-if="data.children && !node.expanded" class="el-icon-menu"></i>
+          <i v-else-if="data.children && node.expanded" class="el-icon-star-on"></i> -->
+          <!-- <i v-else class="el-icon-document"></i> -->
+          <img v-if="data.children && !node.expanded" src="../assets/folder.png" style="margin-left:2px;margin-right: 4px;">
+          <img v-else-if="data.children && node.expanded" src="../assets/folder-open.png" style="margin-right: 4px;">
+          <img v-else src="../assets/file.png" style="margin-right: 6px;margin-left: 2px;">
           {{ node.label }}
         </span>
         <!-- 编辑输入框 -->
