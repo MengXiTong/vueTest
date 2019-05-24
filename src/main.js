@@ -14,6 +14,8 @@ import "element-ui/lib/theme-chalk/index.css";
 import "@ztree/ztree_v3/js/jquery.ztree.core.min.js";
 import "@ztree/ztree_v3/js/jquery.ztree.excheck.min.js";
 import "@ztree/ztree_v3/css/zTreeStyle/zTreeStyle.css";
+import "./lib/util";
+import 'babel-polyfill';
 
 Vue.use(ElementUI);
 Vue.use(iView);

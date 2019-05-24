@@ -19,7 +19,7 @@
       <el-table-column fixed label="棋子">
         <template slot-scope="scope">
           <div @mouseover="handlePopHover(scope.row, $event)" @mouseout="handlePopOut(scope.row, $event)">{{scope.row.chess}}</div>
-        </template>   
+        </template>
       </el-table-column>
       <el-table-column prop="spes" label="种族">
       </el-table-column>
@@ -134,8 +134,8 @@
       storage(isSave) {
         window.localStorage['list-cache'] = isSave ? JSON.stringify(this.list) : [];
       },
-      costFormatter(row, column, cellValue){
-        return cellValue+"元";
+      costFormatter(row, column, cellValue) {
+        return cellValue + "元";
       },
       handlePopHover(row, event) {
         let pop = this.$refs.touchPop;
@@ -161,10 +161,15 @@
       //   this.$set(this, 'list', window.localStorage['list-cache']);
       this.list = JSON.parse(window.localStorage['list-cache']);
       console.log('缓存中读取数据', this.list);
+    },
+    mounted() {
+      console.log(this.$route);
     }
   };
 
 </script>
 
 <style lang="less" scoped>
+
+
 </style>

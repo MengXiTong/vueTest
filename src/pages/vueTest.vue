@@ -7,6 +7,8 @@
     <button @click="changeMsg">
       Change the Message
     </button>
+    <button @click="setUtil">设置Util</button>
+    <button @click="showUtil">展示Util</button>
   </div>
 </template>
 
@@ -71,6 +73,12 @@ export default {
         this.msg2 = this.$refs.msgDiv.innerHTML;
       });
       this.msg3 = this.$refs.msgDiv.innerHTML;
+    },
+    setUtil() {
+      Util.setCookie('AccessToken','123');
+    },
+    showUtil() {
+      alert(Util.getCookie('AccessToken'));
     }
   },
   components: {},
