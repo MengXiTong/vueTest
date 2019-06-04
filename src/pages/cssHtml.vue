@@ -24,26 +24,18 @@
       <el-collapse-item title="input各类型使用" name="5">
         <ui-input></ui-input>
       </el-collapse-item>
-      <el-collapse v-model="activeName" accordion>
-        <el-collapse-item title="树形控件" name="6">
-          <ui-tree></ui-tree>
-        </el-collapse-item>
-      </el-collapse>
-      <el-collapse v-model="activeName" accordion>
-        <el-collapse-item title="dialog组件的使用" name="7">
-          <ui-dialog title="dialogDemo"></ui-dialog>
-        </el-collapse-item>
-      </el-collapse>
-      <el-collapse v-model="activeName" accordion>
-        <el-collapse-item title="ztree的使用" name="8">
-          <ztree></ztree>
-        </el-collapse-item>
-      </el-collapse>
-      <el-collapse v-model="activeName" accordion>
-        <el-collapse-item title="transfer的使用" name="9">
-          <transfer></transfer>
-        </el-collapse-item>
-      </el-collapse>
+      <el-collapse-item title="树形控件" name="6">
+        <ui-tree></ui-tree>
+      </el-collapse-item>
+      <el-collapse-item title="dialog组件的使用" name="7">
+        <ui-dialog title="dialogDemo"></ui-dialog>
+      </el-collapse-item>
+      <el-collapse-item title="ztree的使用" name="8">
+        <ztree></ztree>
+      </el-collapse-item>
+      <el-collapse-item title="transfer的使用" name="9">
+        <transfer></transfer>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>

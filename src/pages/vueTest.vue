@@ -9,6 +9,15 @@
     </button>
     <button @click="setUtil">设置Util</button>
     <button @click="showUtil">展示Util</button>
+    <el-collapse v-model="activeName" accordion>
+      <el-collapse-item title="vue-router的学习" name="1">
+        <router-link to="/vueTest/routerTest">展示</router-link>
+        <router-view></router-view>
+        <router-view name="left" style="float:left;width:50%;background-color:red;"></router-view>
+        <router-view name="right" style="float:right;width:50%;background-color:yellow;"></router-view>
+        <div class="important">注意：这边写的时候component要加s</div>
+      </el-collapse-item>
+    </el-collapse>
   </div>
 </template>
 
@@ -75,7 +84,7 @@ export default {
       this.msg3 = this.$refs.msgDiv.innerHTML;
     },
     setUtil() {
-      Util.setCookie('AccessToken','123');
+      Util.setCookie('AccessToken', '123');
     },
     showUtil() {
       alert(Util.getCookie('AccessToken'));
