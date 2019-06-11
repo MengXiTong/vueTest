@@ -55,13 +55,17 @@ export default new Router({
           },
           children: [
             {
-              path: '/vueTest/routerTest',
+              path: 'routerTest',
               name: 'routerTest',
               components: {
                 default: { template: '<div>default内容</div>' },
                 left: { template: '<div>left内容</div>' },
                 right: { template: '<div>right内容</div>' }
               }
+            },{
+              path: 'redirect',
+              name: 'redirect',
+              redirect: 'routerTest'
             }
           ]
         },

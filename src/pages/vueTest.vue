@@ -11,7 +11,10 @@
     <button @click="showUtil">展示Util</button>
     <el-collapse v-model="activeName" accordion>
       <el-collapse-item title="vue-router的学习" name="1">
-        <router-link to="/vueTest/routerTest">展示</router-link>
+        <router-link to="/vueTest/redirect" exact>展示</router-link> 
+        <!-- 绝对路径 -->
+        <!-- <router-link to="routerTest" append>展示</router-link> -->
+        <!-- 相对路径，不建议使用 -->
         <router-view></router-view>
         <router-view name="left" style="float:left;width:50%;background-color:red;"></router-view>
         <router-view name="right" style="float:right;width:50%;background-color:yellow;"></router-view>
