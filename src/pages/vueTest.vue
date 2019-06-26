@@ -11,7 +11,7 @@
     <button @click="showUtil">展示Util</button>
     <el-collapse v-model="activeName" accordion>
       <el-collapse-item title="vue-router的学习" name="1">
-        <router-link to="/vueTest/redirect" exact>展示</router-link> 
+        <router-link to="/vueTest/redirect" exact>展示</router-link>
         <!-- 绝对路径 -->
         <!-- <router-link to="routerTest" append>展示</router-link> -->
         <!-- 相对路径，不建议使用 -->
@@ -19,6 +19,12 @@
         <router-view name="left" style="float:left;width:50%;background-color:red;"></router-view>
         <router-view name="right" style="float:right;width:50%;background-color:yellow;"></router-view>
         <div class="important">注意：这边写的时候component要加s</div>
+      </el-collapse-item>
+      <el-collapse-item title="transition的使用" name="2">
+        <button @click="show = !show">show/hide text</button>
+        <transition name="fade">
+          <p v-if="show">Hello Worid</p>
+        </transition>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -74,7 +80,8 @@ export default {
           type: 'MARKET_COMPE_INTELLIGENCE',
           name: '市场竞争情报'
         }
-      }
+      },
+      show: false
     };
   },
   methods: {
@@ -113,4 +120,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.5s;
+// }
+// .fade-enter,
+// .fade-leave-active {
+//   opacity: 0;
+// }
+.fade-leave-active,
+.fade-enter-active {
+  transition: all 0.25s;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
 </style>

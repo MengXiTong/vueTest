@@ -36,6 +36,9 @@
       <el-collapse-item title="transfer的使用" name="9">
         <transfer></transfer>
       </el-collapse-item>
+      <el-collapse-item title="图片热区域map与area的使用" name="10">
+        <ui-area></ui-area>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -48,6 +51,7 @@ import uiTree from '@/components/uiTree';
 import uiDialog from '@/components/dialog';
 import ztree from '@/components/ztree';
 import transfer from '@/components/transfer';
+import uiArea from '@/components/uiArea';
 export default {
   data() {
     return {
@@ -61,7 +65,8 @@ export default {
     uiTree,
     uiDialog,
     ztree,
-    transfer
+    transfer,
+    uiArea
   },
   methods: {},
   created() {},
