@@ -62,7 +62,8 @@ export default new Router({
                 left: { template: '<div>left内容</div>' },
                 right: { template: '<div>right内容</div>' }
               }
-            },{
+            },
+            {
               path: 'redirect',
               name: 'redirect',
               redirect: 'routerTest'
@@ -73,6 +74,14 @@ export default new Router({
           path: '/lodashTest',
           name: 'lodashTest',
           component: resolve => require(['@/pages/lodashTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
+          path: '/jsTest',
+          name: 'jsTest',
+          component: resolve => require(['@/pages/jsTest'], resolve),
           meta: {
             keepAlive: true // 需要缓存
           }
