@@ -87,6 +87,37 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "login" */ '@/pages/login')
+    },
+    {
+      path: '/layout',
+      name: 'layout',
+      component: () =>
+        import(/* webpackChunkName: "layout" */ '@/pages/layout'),
+      children: [
+        {
+          path: 'manage',
+          name: 'manage',
+          component: () =>
+            import(/* webpackChunkName: "manage" */ '@/pages/manage')
+        },
+        {
+          path: 'privilege',
+          name: 'privilege',
+          component: () =>
+            import(/* webpackChunkName: "privilege" */ '@/pages/privilege')
+        },
+        {
+          path: 'statistics',
+          name: 'statistics',
+          component: () =>
+            import(/* webpackChunkName: "statistics" */ '@/pages/statistics')
+        }
+      ]
     }
   ]
 });
