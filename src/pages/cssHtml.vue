@@ -39,6 +39,13 @@
       <el-collapse-item title="图片热区域map与area的使用" name="10">
         <ui-area></ui-area>
       </el-collapse-item>
+      <el-collapse-item title="旋转动画效果" name="11">
+        <div class="map">
+          <img class="map1" src="@/assets/earth/lbx.png">
+          <img class="map2" src="@/assets/earth/jt.png">
+          <img class="map3" src="@/assets/earth/map.png">
+        </div>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -107,6 +114,58 @@ export default {
     border-radius: 100px;
     vertical-align: bottom;
     display: inline-block;
+  }
+}
+
+.map {
+  position: relative;
+  z-index: 1;
+  width: 360px;
+  height: 360px;
+  margin-top: 30px;
+  .map1,
+  .map2,
+  .map3,
+  .map4 {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    right: 0;
+  }
+  .map1 {
+    width: 360px;
+    z-index: 2;
+    animation: myfirst2 15s infinite linear;
+    margin-top: -30px;
+  }
+  .map2 {
+    width: 300px;
+    z-index: 3;
+    animation: myfirst 10s infinite linear;
+  }
+  .map3 {
+    width: 300px;
+    z-index: 1;
+  }
+
+  @keyframes myfirst2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes myfirst {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
   }
 }
 </style>

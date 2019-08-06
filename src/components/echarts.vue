@@ -1,5 +1,8 @@
 <template>
-  <div id="echarts" style="width: 600px;height:400px;"></div>
+  <div>
+    <div id="echarts" style="width: 600px;height:400px;"></div>
+    <div id="echarts1" style="width: 300px;height:200px;"></div>
+  </div>
 </template>
 
 <script>
@@ -227,6 +230,38 @@ export default {
     console.log(option);
     let chart = echarts.init(document.getElementById('echarts'));
     chart.setOption(option);
+    let option1 = {
+      title: {
+        text: '73.33%',
+        subtext: '达成率',
+        x: 'center',
+        bottom: '0'
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['135%', '150%'], //扩大半径
+          center: ['50%', '100%'], //第二个值控制上下位置，100%为底部
+          hoverAnimation: false, //不开启联动区的放大效果
+          avoidLabelOverlap: false, //是否启用防止标签重叠策略
+          labelLine: {
+            //不显示视觉引导线
+            normal: {
+              show: false
+            }
+          },
+          startAngle: 180,
+          endAngle: 0,
+          data: [
+            { value: 5 }, //实际
+            { value: 3, itemStyle: { normal: { color: '#eeeeee' } } }, //剩余
+            { value: 8, itemStyle: { normal: { color: 'rgba(0,0,0,0)' } } } //计划（总的）
+          ]
+        }
+      ]
+    };
+    let chart1 = echarts.init(document.getElementById('echarts1'));
+    chart1.setOption(option1);
   }
 };
 </script>
