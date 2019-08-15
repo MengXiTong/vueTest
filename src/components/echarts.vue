@@ -2,6 +2,8 @@
   <div>
     <div id="echarts" style="width: 600px;height:400px;"></div>
     <div id="echarts1" style="width: 300px;height:200px;"></div>
+    <div id="echarts2" style="width: 600px;height:600px;"></div>
+    <div id="echarts3" style="width: 600px;height:600px;"></div>
   </div>
 </template>
 
@@ -183,6 +185,18 @@ export default {
         name.push(nameList[Math.round(Math.random() * nameList.length - 1)]);
       }
       return name.join('');
+    },
+    color(i, j) {
+      if (j > 12 - i) {
+        return 0;
+      }
+      return (j - i) * 0.1;
+    },
+    color2(i, j) {
+      if (j > 10 - i) {
+        return 0;
+      }
+      return ((j - i) * 0.1).toFixed(1);
     }
   },
   created() {}, // 在模板渲染成html或者模板编译进路由前调用created
@@ -227,7 +241,6 @@ export default {
         }
       ]
     };
-    console.log(option);
     let chart = echarts.init(document.getElementById('echarts'));
     chart.setOption(option);
     let option1 = {
@@ -262,6 +275,116 @@ export default {
     };
     let chart1 = echarts.init(document.getElementById('echarts1'));
     chart1.setOption(option1);
+
+    /**
+     * 相关性分析图表
+     */
+    let data2 = [];
+    for (let i = 1; i <= 11; i++) {
+      for (let j = 1; j <= 11; j++) {
+        data2.push([i, j, this.color(i, j)]);
+      }
+    }
+    let option2 = {
+      xAxis: {},
+      yAxis: {},
+      visualMap: {
+        left: 'right',
+        bottom: '20%',
+        min: -1,
+        max: 1,
+        calculable: true,
+        inRange: {
+          color: ['#50a3ba', '#fff', '#eac736']
+        },
+        textStyle: {
+          color: '#fff'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          return params.value[2];
+        }
+      },
+      series: [
+        {
+          symbolSize: 20,
+          data: data2,
+          type: 'scatter'
+        }
+      ]
+    };
+    let chart2 = echarts.init(document.getElementById('echarts2'));
+    chart2.setOption(option2);
+    /**
+     * 相关性分析图表测试热力图效果
+     */
+    let data3 = [];
+    for (let i = 0; i < 11; i++) {
+      for (let j = 0; j < 11; j++) {
+        data3.push([i, j, this.color2(i, j)]);
+      }
+    }
+    let axis = [];
+    for (let i = 1; i <= 11; i++) {
+      axis.push(i);
+    }
+    let option3 = {
+      xAxis: {
+        type: 'category',
+        data: axis,
+        splitArea: {
+          show: true
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: axis,
+        splitArea: {
+          show: true
+        }
+      },
+      visualMap: {
+        left: 'right',
+        bottom: 'center',
+        min: -1,
+        max: 1,
+        calculable: true,
+        inRange: {
+          color: ['#50a3ba', '#fff', '#eac736']
+        },
+        textStyle: {
+          color: '#fff'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+          return params.value[2];
+        }
+      },
+      series: [
+        {
+          data: data3,
+          type: 'heatmap',
+          label: {
+            normal: {
+              show: true
+            }
+          },
+          itemStyle: {
+            emphasis: {
+              shadowBlur: 10,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
+    };
+    let chart3 = echarts.init(document.getElementById('echarts3'));
+    chart3.setOption(option3);
+    console.log(option3);
   }
 };
 </script>
