@@ -85,6 +85,22 @@ export default new Router({
           meta: {
             keepAlive: true // 需要缓存
           }
+        },
+        {
+          path: '/mapTest',
+          name: 'mapTest',
+          component: resolve => require(['@/pages/mapTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
+          path: '/leafletMapTest',
+          name: 'leafletMapTest',
+          component: resolve => require(['@/pages/leafletMapTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
         }
       ]
     },

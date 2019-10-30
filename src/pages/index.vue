@@ -19,6 +19,10 @@
             <Icon type="ios-paper"></Icon>Lodash测试</MenuItem>
             <MenuItem name="7" to="/jsTest">
             <Icon type="ios-paper"></Icon>纯JS测试</MenuItem>
+            <MenuItem name="8" to="/mapTest">
+            <Icon type="ios-paper"></Icon>高德地图测试</MenuItem>
+            <MenuItem name="9" to="/leafletMapTest">
+            <Icon type="ios-paper"></Icon>leaflet地图测试</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">

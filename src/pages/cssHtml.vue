@@ -46,6 +46,9 @@
           <img class="map3" src="@/assets/earth/map.png">
         </div>
       </el-collapse-item>
+      <el-collapse-item title="拉伸" name="12">
+        <stretch></stretch>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -59,6 +62,7 @@ import uiDialog from '@/components/dialog';
 import ztree from '@/components/ztree';
 import transfer from '@/components/transfer';
 import uiArea from '@/components/uiArea';
+import stretch  from '@/components/stretch';
 export default {
   data() {
     return {
@@ -73,7 +77,8 @@ export default {
     uiDialog,
     ztree,
     transfer,
-    uiArea
+    uiArea,
+    stretch
   },
   methods: {},
   created() {},
