@@ -23,6 +23,9 @@
       <el-collapse-item title="电影影评" name="3">
         <score ref="score"></score>
       </el-collapse-item>
+      <el-collapse-item title="文件拖拽" name="4">
+        <div id="dropbox" style="width:200px;height:200px;border: 1px solid #000;">将文件拖放于此</div>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -55,6 +58,36 @@ export default {
         clearTimeout(timer);
         oDiv2.style.display = 'block';
       };
+
+      $(document).on({
+        dragleave: function(e) {
+          //拖离
+          e.preventDefault();
+        },
+        drop: function(e) {
+          //拖后放
+          e.preventDefault();
+        },
+        dragenter: function(e) {
+          //拖进
+          e.preventDefault();
+        },
+        dragover: function(e) {
+          //拖来拖去
+          e.preventDefault();
+        }
+      });
+      var box = document.getElementById('dropbox'); //拖拽区域
+      box.addEventListener(
+        'drop',
+        function(e) {
+          e.preventDefault(); //取消默认浏览器拖拽效果
+          var fileList = e.dataTransfer.files; //获取文件对象
+          //检测是否是拖拽文件到页面的操作
+          console.log(fileList);
+        },
+        false
+      );
     };
   },
   methods: {
