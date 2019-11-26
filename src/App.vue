@@ -135,6 +135,22 @@ export default {
     margin-bottom: @i*1px;
   }
 
+  .ml@{i} {
+    margin-left: @i*1px;
+  }
+
+  .mr@{i} {
+    margin-right: @i*1px;
+  }
+
+  .mt@{i} {
+    margin-top: @i*1px;
+  }
+
+  .mb@{i} {
+    margin-bottom: @i*1px;
+  }
+
   .margin-loop(@n, (@i + 1));
 }
 

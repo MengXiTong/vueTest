@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>大家好我是JS测试</h3>
-    <el-collapse v-model="activeName" accordion @change="handleCollapseChange">
+    <el-collapse v-model="activeName" accordion @change="handleCollapseChange" id="test">
       <el-collapse-item title="鼠标移动显示隐藏" name="1">
         <div id="div1" style="background:red;width:200px;height:40px;"></div>
         <div id="div2" style="background:grey;width:100px;height:40px;display:none;" class="mat10"></div>
@@ -26,12 +26,19 @@
       <el-collapse-item title="文件拖拽" name="4">
         <div id="dropbox" style="width:200px;height:200px;border: 1px solid #000;">将文件拖放于此</div>
       </el-collapse-item>
+      <el-collapse-item title="html转PDF" name="5">
+        <div id="id" ref="resume">
+          <button @click="getPdf('test','报告')">pdf</button>
+        </div>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
 
 <script>
 import score from '@/components/score';
+import html2Canvas from 'html2canvas'
+import JsPDF from 'jspdf'
 
 export default {
   data() {
@@ -59,6 +66,7 @@ export default {
         oDiv2.style.display = 'block';
       };
 
+      //文件拖拽
       $(document).on({
         dragleave: function(e) {
           //拖离
@@ -124,6 +132,36 @@ export default {
           clearInterval(this.timer);
         };
         oUl.onmouseout = scrolling;
+      });
+    },
+    getPdf(id, title) {
+      html2Canvas(document.querySelector(`#${id}`), {
+        allowTaint: true,
+        scale: 2 // 提升画面质量，但是会增加文件大小
+        // useCORS:true
+      }).then(function(canvas) {
+        let contentWidth = canvas.width;
+        let contentHeight = canvas.height;
+        let pageHeight = contentWidth / 592.28 * 841.89;
+        let leftHeight = contentHeight;
+        let position = 0;
+        let imgWidth = 595.28;
+        let imgHeight = 592.28 / contentWidth * contentHeight;
+        let pageData = canvas.toDataURL('image/jpeg', 1.0);
+        let PDF = new JsPDF('', 'pt', 'a4');
+        if (leftHeight < pageHeight) {
+          PDF.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+        } else {
+          while (leftHeight > 0) {
+            PDF.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight);
+            leftHeight -= pageHeight;
+            position -= 841.89;
+            if (leftHeight > 0) {
+              PDF.addPage();
+            }
+          }
+        }
+        PDF.save(title + '.pdf');
       });
     }
   },

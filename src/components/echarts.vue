@@ -1,11 +1,26 @@
 <template>
-  <div>
-    <div id="echarts" style="width: 600px;height:400px;"></div>
+  <div style="width:100%;">
     <div id="echarts1" style="width: 300px;height:200px;"></div>
     <div id="echarts2" style="width: 600px;height:600px;"></div>
     <div id="echarts3" style="width: 600px;height:600px;"></div>
     <div id="map" style="width: 600px;height:600px;"></div>
     <div id="echarts4" style="width: 800px;height:400px;background:#000;"></div>
+    <div id="echarts" style="width: 600px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>扇形图我们也常称它为“饼图”，从扇形统计图中,我们可以直观地看到我们考察的对象(总体)的组成成分、各成分在总体中所占的百分比。</div>
+    <div id="echarts5" style="width: 600px;height:400px;" class="mt10"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>条形统计图的特点：(1)能够使人们一眼看出各个数据的大小。(2)易于比较数据之间的差别。(3）能清楚的表示出数量的多少。</div>
+    <div id="echarts6" style="width: 600px;height:400px;" class="mt10"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>折线统计图的特点：（1）能够显示数据的变化趋势，反映事物的变化情况。</div>
+    <div id="echarts7" style="width: 1101px;height:600px;" class="mt10"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>热力图（Heat map），也可以称为热图、热量表（Heat Table）、密度表（Density Table），主要用于展示数据的分布情况。标准的热力图将两个连续数据分别映射到 x、y 轴，第三个连续数据映射到颜色。一种形象的定义是，热力图是三维柱状图的俯视图。</div>
+    <div id="echarts8" style="width: 1101px;height:600px;" class="mt10"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>路径的显示</div>
+    <div id="echarts9" style="width: 600px;height:600px;"></div>
   </div>
 </template>
 
@@ -2628,7 +2643,7 @@ export default {
             value: [320.46607, 40.093863, 4],
             symbol: 'image://' + ellipse5,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } },
+            itemStyle: { normal: { color: '#FFFFFF' } }
             // label: { normal: { position: [-15, -42] } }
           },
           {
@@ -2643,7 +2658,7 @@ export default {
             value: [410.46607, 40.093863, 4],
             symbol: 'image://' + ellipse3,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } },
+            itemStyle: { normal: { color: '#FFFFFF' } }
             // label: { normal: { position: [-70, -42] } }
           },
           {
@@ -2658,7 +2673,7 @@ export default {
             value: [500.46607, 40.093863, 4],
             symbol: 'image://' + ellipse4,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } },
+            itemStyle: { normal: { color: '#FFFFFF' } }
             // label: { normal: { position: [-25, -42] } }
           },
           {
@@ -2871,7 +2886,7 @@ export default {
               normal: {
                 show: true,
                 // position: [-25, -42],
-                position:'top', //数字的位置
+                position: 'top', //数字的位置
                 fontSize: 12,
                 formatter: '{b}'
               },
@@ -2932,213 +2947,597 @@ export default {
         ]
       };
       chart.setOption(option);
+    },
+    initPie() {
+      let data = this.genData(50);
+      let option = {
+        title: {
+          text: '同名数量统计',
+          subtext: '纯属虚构',
+          x: 'center'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+          type: 'scroll',
+          orient: 'vertical',
+          right: 10,
+          top: 20,
+          bottom: 20,
+          data: data.legendData,
+
+          selected: data.selected
+        },
+        series: [
+          {
+            name: '姓名',
+            type: 'pie',
+            radius: '55%',
+            center: ['40%', '50%'],
+            data: data.seriesData,
+            itemStyle: {
+              emphasis: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts'));
+      chart.setOption(option);
+    },
+    initBar() {
+      let option = {
+        title: {
+          text: '柱状图',
+          left: 'center',
+          textStyle: {
+            color: '#000'
+          }
+        },
+        color: ['#3398DB'],
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            axisTick: {
+              alignWithLabel: true
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            name: '直接访问',
+            type: 'bar',
+            barWidth: '60%',
+            data: [10, 52, 200, 334, 390, 330, 220]
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts5'));
+      chart.setOption(option);
+    },
+    initLine() {
+      let option = {
+        title: {
+          text: '折线图',
+          left: 'center',
+          textStyle: {
+            color: '#000'
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross'
+          }
+        },
+        xAxis: {
+          type: 'category',
+          // axisLine: {
+          //   lineStyle: {
+          //     color: '#0B4CA9'
+          //   }
+          // },
+          axisTick: {
+            show: false
+          },
+          // nameTextStyle: {
+          //   color: '#d4ffff'
+          // },
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+            // smooth: true //是否曲线
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts6'));
+      chart.setOption(option);
+    },
+    initHeatMap() {
+      $.get('static/hangzhou-tracks.json', function(data) {
+        var points = [].concat.apply(
+          [],
+          data.map(function(track) {
+            return track.map(function(seg) {
+              return seg.coord.concat([1]);
+            });
+          })
+        );
+        let chart = echarts.init(document.getElementById('echarts7'));
+        let option = {
+          animation: false,
+          bmap: {
+            center: [120.13066322374, 30.240018034923],
+            zoom: 14,
+            roam: true
+          },
+          visualMap: {
+            show: false,
+            top: 'top',
+            min: 0,
+            max: 5,
+            seriesIndex: 0,
+            calculable: true,
+            inRange: {
+              color: ['blue', 'blue', 'green', 'yellow', 'red']
+            }
+          },
+          series: [
+            {
+              type: 'heatmap',
+              coordinateSystem: 'bmap',
+              data: points,
+              pointSize: 5,
+              blurSize: 6
+            }
+          ]
+        };
+        chart.setOption(option);
+        var bmap = chart
+          .getModel()
+          .getComponent('bmap')
+          .getBMap();
+        bmap.addControl(new BMap.MapTypeControl());
+      });
+    },
+    initPathMap() {
+      $.get('static/hangzhou-tracks.json', function(data) {
+        var lines = data.map(function(track) {
+          return {
+            coords: track.map(function(seg, idx) {
+              return seg.coord;
+            })
+          };
+        });
+        let chart = echarts.init(document.getElementById('echarts8'));
+        let option = {
+          bmap: {
+            center: [120.13066322374, 30.240018034923],
+            zoom: 14,
+            roam: true,
+            mapStyle: {
+              styleJson: [
+                {
+                  featureType: 'water',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#d1d1d1'
+                  }
+                },
+                {
+                  featureType: 'land',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#f3f3f3'
+                  }
+                },
+                {
+                  featureType: 'railway',
+                  elementType: 'all',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'highway',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#fdfdfd'
+                  }
+                },
+                {
+                  featureType: 'highway',
+                  elementType: 'labels',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'arterial',
+                  elementType: 'geometry',
+                  stylers: {
+                    color: '#fefefe'
+                  }
+                },
+                {
+                  featureType: 'arterial',
+                  elementType: 'geometry.fill',
+                  stylers: {
+                    color: '#fefefe'
+                  }
+                },
+                {
+                  featureType: 'poi',
+                  elementType: 'all',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'green',
+                  elementType: 'all',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'subway',
+                  elementType: 'all',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'manmade',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#d1d1d1'
+                  }
+                },
+                {
+                  featureType: 'local',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#d1d1d1'
+                  }
+                },
+                {
+                  featureType: 'arterial',
+                  elementType: 'labels',
+                  stylers: {
+                    visibility: 'off'
+                  }
+                },
+                {
+                  featureType: 'boundary',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#fefefe'
+                  }
+                },
+                {
+                  featureType: 'building',
+                  elementType: 'all',
+                  stylers: {
+                    color: '#d1d1d1'
+                  }
+                },
+                {
+                  featureType: 'label',
+                  elementType: 'labels.text.fill',
+                  stylers: {
+                    color: '#999999'
+                  }
+                }
+              ]
+            }
+          },
+          series: [
+            {
+              type: 'lines',
+              coordinateSystem: 'bmap',
+              data: lines,
+              polyline: true,
+              lineStyle: {
+                normal: {
+                  color: 'purple',
+                  opacity: 0.6,
+                  width: 1
+                }
+              }
+            }
+          ]
+        };
+        chart.setOption(option);
+      });
+    },
+    initProgressMap() {
+      let option1 = {
+        title: {
+          text: '73.33%',
+          subtext: '达成率',
+          x: 'center',
+          bottom: '0'
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: ['135%', '150%'], //扩大半径
+            center: ['50%', '100%'], //第二个值控制上下位置，100%为底部
+            hoverAnimation: false, //不开启联动区的放大效果
+            avoidLabelOverlap: false, //是否启用防止标签重叠策略
+            labelLine: {
+              //不显示视觉引导线
+              normal: {
+                show: false
+              }
+            },
+            startAngle: 180,
+            endAngle: 0,
+            data: [
+              {
+                value: 5
+              }, //实际
+              {
+                value: 3,
+                itemStyle: {
+                  normal: {
+                    color: '#eeeeee'
+                  }
+                }
+              }, //剩余
+              {
+                value: 8,
+                itemStyle: {
+                  normal: {
+                    color: 'rgba(0,0,0,0)'
+                  }
+                }
+              } //计划（总的）
+            ]
+          }
+        ]
+      };
+      let chart1 = echarts.init(document.getElementById('echarts1'));
+      chart1.setOption(option1);
+    },
+    initCorrelations() {
+      let data2 = [];
+      for (let i = 1; i <= 11; i++) {
+        for (let j = 1; j <= 11; j++) {
+          data2.push([i, j, this.color(i, j)]);
+        }
+      }
+      let option2 = {
+        xAxis: {},
+        yAxis: {},
+        visualMap: {
+          left: 'right',
+          bottom: '20%',
+          min: -1,
+          max: 1,
+          calculable: true,
+          inRange: {
+            color: ['#50a3ba', '#fff', '#eac736']
+          },
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: function(params) {
+            return params.value[2];
+          }
+        },
+        series: [
+          {
+            symbolSize: 20,
+            data: data2,
+            type: 'scatter'
+          }
+        ]
+      };
+      let chart2 = echarts.init(document.getElementById('echarts2'));
+      chart2.setOption(option2);
+    },
+    initCorrelationsHeatMap() {
+      let data3 = [];
+      for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 11; j++) {
+          data3.push([i, j, this.color2(i, j)]);
+        }
+      }
+      let axis = [];
+      for (let i = 1; i <= 11; i++) {
+        axis.push(i);
+      }
+      let option3 = {
+        xAxis: {
+          type: 'category',
+          data: axis,
+          splitArea: {
+            show: true
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: axis,
+          splitArea: {
+            show: true
+          }
+        },
+        visualMap: {
+          left: 'right',
+          bottom: 'center',
+          min: -1,
+          max: 1,
+          calculable: true,
+          inRange: {
+            color: ['#50a3ba', '#fff', '#eac736']
+          },
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: function(params) {
+            return params.value[2];
+          }
+        },
+        series: [
+          {
+            data: data3,
+            type: 'heatmap',
+            label: {
+              normal: {
+                show: true
+              }
+            },
+            itemStyle: {
+              emphasis: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+        ]
+      };
+      let chart3 = echarts.init(document.getElementById('echarts3'));
+      chart3.setOption(option3);
+    },
+    initTree() {
+      $.get('static/flare.json', function(data) {
+        let chart = echarts.init(document.getElementById('echarts9'));
+        chart.hideLoading();
+        echarts.util.each(data.children, function(datum, index) {
+          index % 2 === 0 && (datum.collapsed = true);
+        });
+        let option = {
+          tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+          },
+          series: [
+            {
+              type: 'tree',
+
+              data: [data],
+
+              top: '1%',
+              left: '7%',
+              bottom: '1%',
+              right: '20%',
+
+              symbolSize: 7,
+
+              label: {
+                normal: {
+                  position: 'left',
+                  verticalAlign: 'middle',
+                  align: 'right',
+                  fontSize: 9
+                }
+              },
+
+              leaves: {
+                label: {
+                  normal: {
+                    position: 'right',
+                    verticalAlign: 'middle',
+                    align: 'left'
+                  }
+                }
+              },
+
+              expandAndCollapse: true,
+              animationDuration: 550,
+              animationDurationUpdate: 750
+            }
+          ]
+        };
+        chart.setOption(option);
+      });
     }
   },
   created() {}, // 在模板渲染成html或者模板编译进路由前调用created
   mounted() {
-    let _self = this;
     $(function() {}); // mounted已完成模板已经渲染或el对应html渲染后
-    let data = _self.genData(50);
-    let option = {
-      title: {
-        text: '同名数量统计',
-        subtext: '纯属虚构',
-        x: 'center'
-      },
-      tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-      },
-      legend: {
-        type: 'scroll',
-        orient: 'vertical',
-        right: 10,
-        top: 20,
-        bottom: 20,
-        data: data.legendData,
-
-        selected: data.selected
-      },
-      series: [
-        {
-          name: '姓名',
-          type: 'pie',
-          radius: '55%',
-          center: ['40%', '50%'],
-          data: data.seriesData,
-          itemStyle: {
-            emphasis: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            }
-          }
-        }
-      ]
-    };
-    let chart = echarts.init(document.getElementById('echarts'));
-    chart.setOption(option);
-    let option1 = {
-      title: {
-        text: '73.33%',
-        subtext: '达成率',
-        x: 'center',
-        bottom: '0'
-      },
-      series: [
-        {
-          type: 'pie',
-          radius: ['135%', '150%'], //扩大半径
-          center: ['50%', '100%'], //第二个值控制上下位置，100%为底部
-          hoverAnimation: false, //不开启联动区的放大效果
-          avoidLabelOverlap: false, //是否启用防止标签重叠策略
-          labelLine: {
-            //不显示视觉引导线
-            normal: {
-              show: false
-            }
-          },
-          startAngle: 180,
-          endAngle: 0,
-          data: [
-            {
-              value: 5
-            }, //实际
-            {
-              value: 3,
-              itemStyle: {
-                normal: {
-                  color: '#eeeeee'
-                }
-              }
-            }, //剩余
-            {
-              value: 8,
-              itemStyle: {
-                normal: {
-                  color: 'rgba(0,0,0,0)'
-                }
-              }
-            } //计划（总的）
-          ]
-        }
-      ]
-    };
-    let chart1 = echarts.init(document.getElementById('echarts1'));
-    chart1.setOption(option1);
-
+    /**
+     * 扇形统计图
+     */
+    this.initPie();
+    /**
+     * 半圆进度图
+     */
+    this.initProgressMap();
     /**
      * 相关性分析图表
      */
-    let data2 = [];
-    for (let i = 1; i <= 11; i++) {
-      for (let j = 1; j <= 11; j++) {
-        data2.push([i, j, this.color(i, j)]);
-      }
-    }
-    let option2 = {
-      xAxis: {},
-      yAxis: {},
-      visualMap: {
-        left: 'right',
-        bottom: '20%',
-        min: -1,
-        max: 1,
-        calculable: true,
-        inRange: {
-          color: ['#50a3ba', '#fff', '#eac736']
-        },
-        textStyle: {
-          color: '#fff'
-        }
-      },
-      tooltip: {
-        trigger: 'item',
-        formatter: function(params) {
-          return params.value[2];
-        }
-      },
-      series: [
-        {
-          symbolSize: 20,
-          data: data2,
-          type: 'scatter'
-        }
-      ]
-    };
-    let chart2 = echarts.init(document.getElementById('echarts2'));
-    chart2.setOption(option2);
+    this.initCorrelations();
     /**
      * 相关性分析图表测试热力图效果
      */
-    let data3 = [];
-    for (let i = 0; i < 11; i++) {
-      for (let j = 0; j < 11; j++) {
-        data3.push([i, j, this.color2(i, j)]);
-      }
-    }
-    let axis = [];
-    for (let i = 1; i <= 11; i++) {
-      axis.push(i);
-    }
-    let option3 = {
-      xAxis: {
-        type: 'category',
-        data: axis,
-        splitArea: {
-          show: true
-        }
-      },
-      yAxis: {
-        type: 'category',
-        data: axis,
-        splitArea: {
-          show: true
-        }
-      },
-      visualMap: {
-        left: 'right',
-        bottom: 'center',
-        min: -1,
-        max: 1,
-        calculable: true,
-        inRange: {
-          color: ['#50a3ba', '#fff', '#eac736']
-        },
-        textStyle: {
-          color: '#fff'
-        }
-      },
-      tooltip: {
-        trigger: 'item',
-        formatter: function(params) {
-          return params.value[2];
-        }
-      },
-      series: [
-        {
-          data: data3,
-          type: 'heatmap',
-          label: {
-            normal: {
-              show: true
-            }
-          },
-          itemStyle: {
-            emphasis: {
-              shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            }
-          }
-        }
-      ]
-    };
-    let chart3 = echarts.init(document.getElementById('echarts3'));
-    chart3.setOption(option3);
-    console.log(option3);
-
+    this.initCorrelationsHeatMap();
+    /**
+     * 太仓镇分布图
+     */
     this.initMap();
+    /**
+     * 数据流向图
+     */
     this.initFlowGraph();
+    /**
+     * 柱状图
+     */
+    this.initBar();
+    /**
+     * 折线图
+     */
+    this.initLine();
+    /**
+     * 热力图
+     */
+    this.initHeatMap();
+    /**
+     * 路径图
+     */
+    this.initPathMap();
+    /**
+     * 树图
+     */
+    this.initTree();
   }
 };
 </script>

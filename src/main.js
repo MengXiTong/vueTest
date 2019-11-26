@@ -16,6 +16,10 @@ import "@ztree/ztree_v3/js/jquery.ztree.excheck.min.js";
 import "@ztree/ztree_v3/css/zTreeStyle/zTreeStyle.css";
 import "./lib/util";
 import 'babel-polyfill';
+import 'echarts/extension/bmap/bmap';
+
+import overFunction from "@/components/utils/overFunction";
+Vue.use(overFunction);
 
 Vue.use(ElementUI);
 Vue.use(iView);

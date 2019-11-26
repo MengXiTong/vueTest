@@ -38,6 +38,9 @@
       <el-collapse-item title="测试网络通讯" name="4">
         <button @click="testNetWork">测试</button>
       </el-collapse-item>
+      <el-collapse-item title="使用Vue全局函数" name="5">
+        <button @click="showOverFunction">测试</button>
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>

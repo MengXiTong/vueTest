@@ -18,6 +18,7 @@ module.exports = {
   },
   externals:{
     "AMap": "AMap",
+    "BMap": "BMap"
   },
   output: {
     path: config.build.assetsRoot,
