@@ -21,6 +21,10 @@
     <div class="tl mt5">
       <span style="color:green">应用场景：</span>路径的显示</div>
     <div id="echarts9" style="width: 600px;height:600px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">应用场景：</span>（1）在战略计划活动中，将目标逐层分解，逐层落实（2）新产品研制过程中设计质量的展开，明确要达到设计目标需要哪些质量</div>
+    <div id="echarts10" style="width: 600px;height:600px;"></div>
+    <div id="echarts11" style="width: 600px;height:600px;"></div>
   </div>
 </template>
 

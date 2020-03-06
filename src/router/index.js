@@ -95,6 +95,14 @@ export default new Router({
           }
         },
         {
+          path: '/BMapTest',
+          name: 'BMapTest',
+          component: resolve => require(['@/pages/BMapTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
           path: '/leafletMapTest',
           name: 'leafletMapTest',
           component: resolve => require(['@/pages/leafletMapTest'], resolve),

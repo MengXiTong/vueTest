@@ -23,6 +23,8 @@
             <Icon type="ios-paper"></Icon>高德地图测试</MenuItem>
             <MenuItem name="9" to="/leafletMapTest">
             <Icon type="ios-paper"></Icon>leaflet地图测试</MenuItem>
+            <MenuItem name="10" to="/BMapTest">
+            <Icon type="ios-paper"></Icon>百度地图测试</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">
