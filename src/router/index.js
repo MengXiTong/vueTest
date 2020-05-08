@@ -109,6 +109,30 @@ export default new Router({
           meta: {
             keepAlive: true // 需要缓存
           }
+        },
+        {
+          path: '/createjsTest',
+          name: 'createjsTest',
+          component: resolve => require(['@/pages/createjsTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
+          path: '/dataV',
+          name: 'dataV',
+          component: resolve => require(['@/pages/dataV'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
+          path: '/iframeTest',
+          name: 'iframeTest',
+          component: resolve => require(['@/pages/iframeTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
         }
       ]
     },

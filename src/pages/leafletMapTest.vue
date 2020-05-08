@@ -124,6 +124,9 @@
           style: this.style,
           onEachFeature: this.onEachFeature
         });
+        // this.geojson.eachLayer(function (layer) {
+        //   layer.bindPopup(layer.feature.attributes.MC);
+        // });
         this.greenIcon = L.icon({
           iconUrl: icon,
           shadowUrl: iconShadow,
@@ -145,29 +148,27 @@
         };
       },
       onEachFeature(feature, layer) {
+        layer.bindPopup(feature.attributes.MC);
         layer.on({
-          mouseover: this.highlightFeature,
-          mouseout: this.resetHighlight,
-          click: this.zoomToFeature
+          mouseover: (e) => {
+            var layer = e.target;
+            layer.setStyle({
+              weight: 3,
+              color: '#666',
+              fillOpacity: 0.7
+            });
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+              layer.bringToFront();
+            }
+          },
+          mouseout: (e) => {
+            this.layerGeo.resetStyle(e.target);
+          },
+          // click: (e) => {
+          //   console.log(e.target.feature.attributes.MC);
+          //   // this.map.fitBounds(e.target.getBounds());
+          // }
         });
-      },
-      highlightFeature(e) {
-        var layer = e.target;
-        layer.setStyle({
-          weight: 3,
-          color: '#666',
-          fillOpacity: 0.7
-        });
-        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-          layer.bringToFront();
-        }
-      },
-      resetHighlight(e) {
-        this.layerGeo.resetStyle(e.target);
-      },
-      zoomToFeature(e){
-        console.log(e);
-        this.map.fitBounds(e.target.getBounds());
       },
       openLayer() {
         this.map.addLayer(this.layerGeo);

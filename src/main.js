@@ -17,6 +17,7 @@ import "@ztree/ztree_v3/css/zTreeStyle/zTreeStyle.css";
 import "./lib/util";
 import 'babel-polyfill';
 import 'echarts/extension/bmap/bmap';
+import dataV from '@jiaminghi/data-view'
 
 import overFunction from "@/components/utils/overFunction";
 Vue.use(overFunction);
@@ -24,6 +25,7 @@ Vue.use(overFunction);
 Vue.use(ElementUI);
 Vue.use(iView);
 Vue.use(VueI18n);
+Vue.use(dataV);
 const i18n = new VueI18n({ locale: 'zh_CN', })
 Vue.use(VeeValidate, {
   i18n,

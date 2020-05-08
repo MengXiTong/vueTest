@@ -23,8 +23,38 @@
     <div id="echarts9" style="width: 600px;height:600px;"></div>
     <div class="tl mt5">
       <span style="color:green">应用场景：</span>（1）在战略计划活动中，将目标逐层分解，逐层落实（2）新产品研制过程中设计质量的展开，明确要达到设计目标需要哪些质量</div>
-    <div id="echarts10" style="width: 600px;height:600px;"></div>
-    <div id="echarts11" style="width: 600px;height:600px;"></div>
+    <div id="echarts10" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">桑基图</span>
+    </div>
+    <div id="echarts11" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">单柱状图样式图1</span>
+    </div>
+    <div id="echarts12" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">单柱状图样式图2</span>
+    </div>
+    <div id="echarts13" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">单柱状图样式图3</span>
+    </div>
+    <div id="echarts14" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">单柱状图样式图4</span>
+    </div>
+    <div id="echarts15" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">多柱状图样式</span>
+    </div>
+    <div id="echarts16" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">水位图样式</span>
+    </div>
+    <div id="echarts17" style="width:800px;height:400px;"></div>
+    <div class="tl mt5">
+      <span style="color:green">曲线图样式</span>
+    </div>
   </div>
 </template>
 
@@ -35,6 +65,7 @@ import ellipse2 from '@/assets/ellipse2.png';
 import ellipse3 from '@/assets/ellipse3.png';
 import ellipse4 from '@/assets/ellipse4.png';
 import ellipse5 from '@/assets/ellipse5.png';
+import echartsLiquidfill from 'echarts-liquidfill';
 
 export default {
   name: 'echarts',
@@ -2605,49 +2636,77 @@ export default {
             value: [50.46607, 40.093863, 4],
             symbol: 'image://' + ellipse1,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '交运局',
             value: [140.65607, 40.093863, 4],
             symbol: 'image://' + ellipse2,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '卫计委',
             value: [50.65607, 170.093863, 4],
             symbol: 'image://' + ellipse3,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '国土资源局',
             value: [230.46607, 40.093863, 4],
             symbol: 'image://' + ellipse4,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '城管局',
             value: [140.65607, 170.093863, 4],
             symbol: 'image://' + ellipse1,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '财政局',
             value: [230.65607, 170.093863, 4],
             symbol: 'image://' + ellipse2,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '沙溪镇',
             value: [320.46607, 40.093863, 4],
             symbol: 'image://' + ellipse5,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
             // label: { normal: { position: [-15, -42] } }
           },
           {
@@ -2655,14 +2714,22 @@ export default {
             value: [320.65607, 170.093863, 4],
             symbol: 'image://' + ellipse4,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '经信委',
             value: [410.46607, 40.093863, 4],
             symbol: 'image://' + ellipse3,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
             // label: { normal: { position: [-70, -42] } }
           },
           {
@@ -2670,14 +2737,22 @@ export default {
             value: [410.65607, 170.093863, 4],
             symbol: 'image://' + ellipse5,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '安监局',
             value: [500.46607, 40.093863, 4],
             symbol: 'image://' + ellipse4,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
             // label: { normal: { position: [-25, -42] } }
           },
           {
@@ -2685,21 +2760,33 @@ export default {
             value: [500.65607, 170.093863, 4],
             symbol: 'image://' + ellipse3,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '民政局',
             value: [590.46607, 40.093863, 4],
             symbol: 'image://' + ellipse5,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           },
           {
             name: '高新区',
             value: [590.65607, 170.093863, 4],
             symbol: 'image://' + ellipse1,
             symbolSize: 2,
-            itemStyle: { normal: { color: '#FFFFFF' } }
+            itemStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
           }
         ],
         moveLines: [
@@ -3493,6 +3580,1496 @@ export default {
         };
         chart.setOption(option);
       });
+    },
+    initSankey() {
+      var sourceData = [
+        {
+          name: '市直归集',
+          nameValue: 60,
+          valueUnit: '亿'
+        },
+        {
+          name: '省级回流',
+          nameValue: 30,
+          valueUnit: '亿'
+        },
+        {
+          name: '五区归集',
+          nameValue: 30,
+          valueUnit: '亿'
+        },
+        {
+          name: '数据中心',
+          nameValue: 120,
+          valueUnit: '亿'
+        },
+        {
+          name: '综合治税',
+          nameValue: 50,
+          valueUnit: '亿'
+        },
+        {
+          name: '市场监管',
+          nameValue: 20,
+          valueUnit: '亿'
+        },
+        {
+          name: '公共信用',
+          nameValue: 30,
+          valueUnit: '亿'
+        },
+        {
+          name: '数据开放',
+          nameValue: 20,
+          valueUnit: '亿'
+        }
+      ];
+      var sangjiColor = [
+        '#f7a365',
+        '#44eda1',
+        '#00ffff',
+        '#00baff',
+        '#f8b551',
+        '#7ecef4',
+        '#7ecef4',
+        '#7ecef4'
+      ];
+      var itemStyleSource = [];
+      for (let d = 0; d < sourceData.length; d++) {
+        sourceData[d].itemStyle = {
+          normal: {
+            color: sangjiColor[d]
+          }
+        };
+        itemStyleSource.push(sourceData[d]);
+      }
+      let option = {
+        backgroundColor: '#013d5a',
+        series: [
+          {
+            type: 'sankey',
+            layout: 'none',
+            top: '12%',
+            bottom: '21%',
+            left: '3%',
+            focusNodeAdjacency: 'allEdges',
+            data: itemStyleSource,
+            links: [
+              {
+                source: '市直归集',
+                target: '数据中心',
+                value: 60
+              },
+              {
+                source: '省级回流',
+                target: '数据中心',
+                value: 30
+              },
+              {
+                source: '五区归集',
+                target: '数据中心',
+                value: 30
+              },
+              {
+                source: '数据中心',
+                target: '综合治税',
+                value: 50
+              },
+              {
+                source: '数据中心',
+                target: '市场监管',
+                value: 20
+              },
+              {
+                source: '数据中心',
+                target: '公共信用',
+                value: 30
+              },
+              {
+                source: '数据中心',
+                target: '数据开放',
+                value: 20
+              }
+            ],
+            label: {
+              normal: {
+                color: '#fff',
+                fontSize: 20,
+                formatter: function(params, i) {
+                  console.log(params);
+                  return (
+                    '{white|' +
+                    params.data.name +
+                    '\n}' +
+                    params.data.nameValue +
+                    ' ' +
+                    params.data.valueUnit
+                  );
+                },
+                rich: {
+                  white: {
+                    fontSize: 20,
+                    padding: [10, 0, 0, 0]
+                  }
+                }
+              }
+            },
+            lineStyle: {
+              normal: {
+                color: 'source',
+                curveness: 0.5
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 1,
+                borderColor: 'transparent'
+              }
+            }
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts10'));
+      chart.setOption(option);
+    },
+    initBarStyle1() {
+      const createSvg = ({
+        width,
+        height,
+        borderWidth,
+        startColor,
+        endColor,
+        insetShadowBlur,
+        outShadowBlur
+      }) => {
+        const padding = 3 * outShadowBlur;
+        const gWidth = width + 2 * padding;
+        const gHeight = height + 2 * padding;
+        const rectPath = `m${padding} ${padding} l${width} ${0} l${0} ${height} l${-width} ${0 -
+          20} z`;
+        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 ${gWidth} ${gHeight}" xml:space="preserve">
+              <style>
+                .st1 {
+                    fill: transparent;
+                    stroke: ${startColor};
+                    stroke-width: ${insetShadowBlur}px;
+                    filter: url(#chart-inset-shadow);
+                    clip-path: url(#chart-clip);
+                }
+                .st2 {
+                    fill: transparent;
+                    stroke: url(#chart-gradient);
+                    stroke-width: ${borderWidth}px;
+                    clip-path: url(#chart-clip);
+                }
+                .st3 {
+                    fill: transparent;
+                    stroke: url(#chart-gradient);
+                    stroke-width: ${outShadowBlur}px;
+                    filter: url(#chart-outset-shadow);
+                }
+                .sweep-slow-animate {
+                  animation-name: sweep-slow-path;
+                  animation-timing-function: linear;
+                  animation-iteration-count: infinite;
+                  animation-duration: 12s;
+                }
+                @keyframes sweep-slow-path {
+                  0% {
+                    transform: translateY(0%);
+                  }
+                  100% {
+                    transform: translateY(100%);
+                  }
+                }
+              </style>
+            <defs>
+                <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="${startColor}"/>
+                    <stop offset="100%" stop-color="${endColor}"/>
+                </linearGradient>
+                
+                <clipPath id="chart-clip">
+                    <path d="${rectPath}" />
+                </clipPath>
+                
+                <filter id="chart-inset-shadow" width="200%" height="200%" x="-50%" y="-50%">
+            		<feGaussianBlur in="SourceGraphic" result="gass" stdDeviation="${insetShadowBlur *
+                  0.75}" />
+            		<feMerge>
+            			<feMergeNode in="gass" />
+            		</feMerge>
+            	</filter>
+
+                <filter id="chart-outset-shadow" width="200%" height="200%" x="-50%" y="-50%">
+            		<feGaussianBlur in="SourceGraphic" result="gassOut" stdDeviation="3" />
+            		<feMerge>
+            			<feMergeNode in="gassOut" />
+            		</feMerge>
+            	</filter>
+            	
+                <clipPath id="chart-move-clip">
+                    <rect class="sweep-slow-animate" x="0" y="0" width="${gWidth}" height="${gHeight}" />
+                </clipPath>
+            </defs>
+            <g>
+                <path class="st1" d="${rectPath}" />
+                <path class="st2" d="${rectPath}" />
+                <path class="st3" d="${rectPath}" />
+            </g>
+            </svg>`;
+      };
+      const cretateSvgUrl = svgOption => {
+        const svgString = createSvg(svgOption);
+        const svg = new Blob([svgString], {
+          type: 'image/svg+xml;charset=utf-8'
+        });
+        const DOMURL = window.URL || window.webkitURL || window;
+        const insetShadowUrl = DOMURL.createObjectURL(svg);
+        return insetShadowUrl;
+      };
+      const dataSet = [
+        ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        [120, 200, 150, 80, 70, 110, 130]
+      ];
+      let option = {
+        backgroundColor: '#101631',
+        xAxis: {
+          type: 'category',
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            color: 'rgba(255,255,255, 0.5)'
+          },
+          splitLine: {
+            show: false
+          },
+          data: dataSet[0]
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            color: 'rgba(255,255,255, 0.5)'
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              type: 'dashed',
+              color: 'rgba(255,255,255,0.1)',
+              width: 2
+            }
+          }
+        },
+        series: [
+          {
+            type: 'custom',
+            hoverAnimation: true,
+            renderItem: (params, api) => {
+              const index = api.value(0);
+              const value = api.value(1);
+              const px = api.coord([index, value]);
+
+              console.log(api.style(), params);
+
+              const h = api.coord([0, 0])[1];
+              const barWidth = 50;
+              const outShadowBlur = 5;
+
+              const width = barWidth + 3 * outShadowBlur;
+              const height = h - px[1] + 6 * outShadowBlur;
+              const x = px[0] - width * 0.5;
+              const y = px[1] - 3 * outShadowBlur;
+
+              const svgUrl = cretateSvgUrl({
+                width,
+                height,
+                borderWidth: 5,
+                startColor: '#156dff',
+                endColor: '#00eaeb',
+                insetShadowBlur: 16,
+                outShadowBlur
+              });
+
+              return {
+                type: 'image',
+                style: {
+                  image: svgUrl,
+                  x,
+                  y,
+                  width,
+                  height
+                }
+              };
+            },
+            data: dataSet[1]
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts11'));
+      chart.setOption(option);
+    },
+    initBarStyle2() {
+      let option = {
+        backgroundColor: '#0e202d',
+        tooltip: {},
+        xAxis: {
+          data: ['企业', '农专', '个体'],
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false,
+            textStyle: {
+              color: '#e54035'
+            }
+          }
+        },
+        yAxis: {
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false
+          }
+        },
+        series: [
+          {
+            name: '年报上报率3',
+            type: 'pictorialBar',
+            symbolSize: [100, 45],
+            symbolOffset: [0, -20],
+            z: 12,
+            itemStyle: {
+              normal: {
+                color: '#14b1eb'
+              }
+            },
+            data: [
+              {
+                value: 100,
+                symbolPosition: 'end'
+              },
+              {
+                value: 50,
+                symbolPosition: 'end'
+              },
+              {
+                value: 20,
+                symbolPosition: 'end'
+              }
+            ]
+          },
+          {
+            name: '年报上报率2',
+            type: 'pictorialBar',
+            symbolSize: [100, 45],
+            symbolOffset: [0, 20],
+            z: 12,
+            itemStyle: {
+              normal: {
+                color: '#14b1eb'
+              }
+            },
+            data: [100, 50, 20]
+          },
+          {
+            name: '年报上报率1',
+            type: 'pictorialBar',
+            symbolSize: [150, 75],
+            symbolOffset: [0, 37],
+            z: 11,
+            itemStyle: {
+              normal: {
+                color: 'transparent',
+                borderColor: '#14b1eb',
+                borderWidth: 5
+              }
+            },
+            data: [100, 50, 20]
+          },
+          {
+            name: '年报上报率',
+            type: 'pictorialBar',
+            symbolSize: [200, 100],
+            symbolOffset: [0, 50],
+            z: 10,
+            itemStyle: {
+              normal: {
+                color: 'transparent',
+                borderColor: '#14b1eb',
+                borderType: 'dashed',
+                borderWidth: 5
+              }
+            },
+            data: [100, 50, 20]
+          },
+          {
+            type: 'bar',
+            itemStyle: {
+              normal: {
+                color: '#14b1eb',
+                opacity: 0.7
+              }
+            },
+            silent: true,
+            barWidth: 100,
+            barGap: '-100%', // Make series be overlap
+            data: [100, 50, 20]
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts12'));
+      chart.setOption(option);
+    },
+    initBarStyle3() {
+      const xData = ['本年话务总量', '本年人工话务量', '每万客户呼入量'];
+      const yData = [2342, 1230, 425];
+      let option = {
+        backgroundColor: '#061326',
+        grid: {
+          top: '25%',
+          left: '-5%',
+          bottom: '5%',
+          right: '5%',
+          containLabel: true
+        },
+        animation: false,
+        xAxis: [
+          {
+            type: 'category',
+            data: xData,
+            axisTick: {
+              alignWithLabel: true
+            },
+            nameTextStyle: {
+              color: '#82b0ec'
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#82b0ec'
+              }
+            },
+            axisLabel: {
+              textStyle: {
+                color: '#fff'
+              },
+              margin: 30
+            }
+          }
+        ],
+        yAxis: [
+          {
+            show: false,
+            type: 'value',
+            axisLabel: {
+              textStyle: {
+                color: '#fff'
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: '#0c2c5a'
+              }
+            },
+            axisLine: {
+              show: false
+            }
+          }
+        ],
+        series: [
+          {
+            name: '',
+            type: 'pictorialBar',
+            symbolSize: [40, 10],
+            symbolOffset: [0, -6],
+            symbolPosition: 'end',
+            z: 12,
+            // "barWidth": "0",
+            label: {
+              normal: {
+                show: true,
+                position: 'top',
+                // "formatter": "{c}%"
+                fontSize: 25,
+                fontWeight: 'bold',
+                color: '#34DCFF'
+              }
+            },
+            color: '#2DB1EF',
+            data: yData
+          },
+          {
+            name: '',
+            type: 'pictorialBar',
+            symbolSize: [40, 10],
+            symbolOffset: [0, 7],
+            // "barWidth": "20",
+            z: 12,
+            color: '#2DB1EF',
+            data: yData
+          },
+          {
+            name: '',
+            type: 'pictorialBar',
+            symbolSize: [50, 15],
+            symbolOffset: [0, 12],
+            z: 10,
+            itemStyle: {
+              normal: {
+                color: 'transparent',
+                borderColor: '#2EA9E5',
+                borderType: 'solid',
+                borderWidth: 1
+              }
+            },
+            data: yData
+          },
+          {
+            name: '',
+            type: 'pictorialBar',
+            symbolSize: [70, 20],
+            symbolOffset: [0, 18],
+            z: 10,
+            itemStyle: {
+              normal: {
+                color: 'transparent',
+                borderColor: '#19465D',
+                borderType: 'solid',
+                borderWidth: 2
+              }
+            },
+            data: yData
+          },
+          {
+            type: 'bar',
+            //silent: true,
+            barWidth: '40',
+            barGap: '10%', // Make series be overlap
+            barCateGoryGap: '10%',
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 0.7, [
+                  {
+                    offset: 0,
+                    color: '#38B2E6'
+                  },
+                  {
+                    offset: 1,
+                    color: '#0B3147'
+                  }
+                ]),
+                opacity: 0.8
+              }
+            },
+            data: yData
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts13'));
+      chart.setOption(option);
+    },
+    initBarStyle4() {
+      let option = {
+        backgroundColor: '#38445E',
+        grid: {
+          left: '12%',
+          top: '5%',
+          bottom: '12%',
+          right: '8%'
+        },
+        xAxis: {
+          data: [
+            '驯鹿',
+            '火箭',
+            '飞机',
+            '高铁',
+            '轮船',
+            '汽车',
+            '跑步',
+            '步行'
+          ],
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            lineStyle: {
+              color: 'rgba(255, 129, 109, 0.1)',
+              width: 1 //这里是为了突出显示加上的
+            }
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#999',
+              fontSize: 12
+            }
+          }
+        },
+        yAxis: [
+          {
+            splitNumber: 2,
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              lineStyle: {
+                color: 'rgba(255, 129, 109, 0.1)',
+                width: 1 //这里是为了突出显示加上的
+              }
+            },
+            axisLabel: {
+              textStyle: {
+                color: '#999'
+              }
+            },
+            splitArea: {
+              areaStyle: {
+                color: 'rgba(255,255,255,.5)'
+              }
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(255, 129, 109, 0.1)',
+                width: 0.5,
+                type: 'dashed'
+              }
+            }
+          }
+        ],
+        series: [
+          {
+            name: 'hill',
+            type: 'pictorialBar',
+            barCategoryGap: '0%',
+            symbol:
+              'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+            label: {
+              show: true,
+              position: 'top',
+              distance: 15,
+              color: '#DB5E6A',
+              fontWeight: 'bolder',
+              fontSize: 20
+            },
+            itemStyle: {
+              normal: {
+                color: {
+                  type: 'linear',
+                  x: 0,
+                  y: 0,
+                  x2: 0,
+                  y2: 1,
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: 'rgba(232, 94, 106, .8)' //  0%  处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(232, 94, 106, .1)' //  100%  处的颜色
+                    }
+                  ],
+                  global: false //  缺省为  false
+                }
+              },
+              emphasis: {
+                opacity: 1
+              }
+            },
+            data: [123, 60, 25, 18, 12, 9, 2, 1],
+            z: 10
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts14'));
+      chart.setOption(option);
+    },
+    initMulticyBarStyle() {
+      var Name = ['国家目标', '海南目标', '完成情况'];
+      var color = [
+        '#fb734e',
+        '#e32f46',
+        '#94d96c',
+        '#0bbcb7',
+        '#1a9bfc',
+        '#7049f0'
+      ];
+      var data = {
+        //['国家目标', '海南目标', '完成情况']
+        '学前教育毛入园率(%)': [65, 60, 76.5],
+        '义务教育巩固率(㎡)': [93, 93, 93.4],
+        '高中教育毛入学率(%)': [87, 87, 88.3],
+        '高等教育毛入学率(%)': [36, 36, 36.4]
+      };
+      var xAxisData = [];
+      var data1 = [],
+        data2 = [],
+        data3 = [];
+      for (var i in data) {
+        xAxisData.push(i);
+        data1.push(data[i][0]);
+        data2.push(data[i][1]);
+        data3.push(data[i][2]);
+      }
+      var label = {
+        normal: {
+          show: false,
+          position: 'right',
+          distance: 10,
+          formatter: function(param) {
+            return param.value + '%';
+          },
+          textStyle: {
+            color: '#ffffff',
+            fontSize: '16'
+          }
+        }
+      };
+      var series = [];
+      for (var j = 1; j < 4; j++) {
+        if (j == 1) {
+          var symbolOffset = [-48, 0];
+          var dataArr = data1;
+        } else if (j == 2) {
+          var symbolOffset = [0, 0];
+          var dataArr = data2;
+        } else if (j == 3) {
+          var symbolOffset = [48, 0];
+          var dataArr = data3;
+        }
+
+        series.push(
+          {
+            name: Name[j - 1],
+            type: 'bar',
+            stack: j,
+            xAxisIndex: 0,
+            data: dataArr,
+            label: label,
+            barWidth: 8,
+            barGap: 5,
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: color[j * 2 - 2]
+                  },
+                  {
+                    offset: 1,
+                    color: color[j * 2 - 1]
+                  }
+                ])
+              }
+            },
+            z: 2
+          },
+          {
+            name: Name[j - 1],
+            type: 'scatter',
+            stack: j,
+            xAxisIndex: 0,
+            symbolOffset: symbolOffset, //相对于原本位置的偏移量
+            data: [0, 0, 0, 0],
+            label: {
+              normal: {
+                show: false
+              }
+            },
+            xAxisIndex: 2,
+            symbolSize: 14,
+            itemStyle: {
+              normal: {
+                borderColor: '#fff',
+                borderWidth: 2,
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: color[j * 2 - 2]
+                  },
+                  {
+                    offset: 1,
+                    color: color[j * 2 - 1]
+                  }
+                ]),
+                opacity: 1
+              }
+            },
+            z: 2
+          },
+          {
+            name: Name[j - 1],
+            type: 'bar',
+            xAxisIndex: 1,
+            barGap: '140%',
+            data: [
+              dataArr[0] + 15,
+              dataArr[1] + 15,
+              dataArr[2] + 15,
+              dataArr[3] + 15
+            ],
+            barWidth: 20,
+            itemStyle: {
+              normal: {
+                color: '#0e2147',
+                barBorderRadius: 5
+              }
+            },
+            z: 1
+          },
+          {
+            name: Name[j - 1],
+            type: 'bar',
+            xAxisIndex: 2,
+            data: [
+              dataArr[0] + 15.5,
+              dataArr[1] + 15.5,
+              dataArr[2] + 15.5,
+              dataArr[3] + 15.5
+            ],
+            barWidth: 24,
+            barGap: 1,
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: color[j * 2 - 2]
+                  },
+                  {
+                    offset: 1,
+                    color: color[j * 2 - 1]
+                  }
+                ]),
+                barBorderRadius: 5
+              }
+            },
+            z: 0
+          },
+          {
+            name: Name[j - 1],
+            type: 'scatter',
+            hoverAnimation: false,
+            data: [1.2, 1.2, 1.2, 1.2],
+            xAxisIndex: 2,
+            symbolOffset: symbolOffset, //相对于原本位置的偏移量
+            symbolSize: 24,
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: color[j * 2 - 2]
+                  },
+                  {
+                    offset: 1,
+                    color: color[j * 2 - 1]
+                  }
+                ]),
+                opacity: 1
+              }
+            },
+            z: 2
+          }
+        );
+      }
+      let option = {
+        backgroundColor: '#142058',
+        title: {
+          text: '温度计',
+          x: '10',
+          y: '10',
+          textStyle: {
+            fontWeight: 'normal',
+            fontSize: 24,
+            color: '#fff'
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '3%',
+          bottom: '10%',
+          top: '10%',
+          containLabel: true
+        },
+        tooltip: {
+          show: 'true',
+          trigger: 'axis',
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+            shadowStyle: {
+              color: 'rgba(112,112,112,0)'
+            }
+          },
+          // formatter: '{b}<br />{a0}: {c0}%<br />{a1}: {c1}%<br />{a2}: {c2}%',
+          formatter: function(params) {
+            var unit = params[0].name.substring(
+              params[0].name.indexOf('(') + 1,
+              params[0].name.indexOf(')')
+            );
+            return (
+              params[0].name +
+              ' ：<br />' +
+              params[0].seriesName +
+              ' ：' +
+              params[0].data +
+              unit +
+              '<br />' +
+              params[1].seriesName +
+              ' ：' +
+              params[1].data +
+              unit +
+              '<br />' +
+              params[2].seriesName +
+              ' ：' +
+              params[2].data +
+              unit
+            );
+          },
+          backgroundColor: 'rgba(0,0,0,0.7)', // 背景
+          padding: [8, 10], //内边距
+          extraCssText: 'box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);' //添加阴影
+        },
+        legend: {
+          top: 20,
+          textStyle: {
+            color: '#fff'
+          },
+          data: Name
+        },
+        xAxis: [
+          {
+            type: 'category',
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: '#363e83'
+              }
+            },
+            axisLabel: {
+              inside: false,
+              textStyle: {
+                color: '#bac0c0',
+                fontWeight: 'normal',
+                fontSize: '12'
+              }
+            },
+            data: xAxisData
+          },
+          {
+            type: 'category',
+            axisLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            },
+            splitArea: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
+            data: xAxisData
+          },
+          {
+            type: 'category',
+            axisLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            },
+            splitArea: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
+            data: xAxisData
+          }
+        ],
+        yAxis: {
+          type: 'value',
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#32346c'
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#32346c '
+            }
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#bac0c0',
+              fontWeight: 'normal',
+              fontSize: '12'
+            }
+          }
+        },
+        series: series
+      };
+      let chart = echarts.init(document.getElementById('echarts15'));
+      chart.setOption(option);
+    },
+    initWaterLevelStyle() {
+      var value = 0.2;
+      var data = [value, value, value];
+      let option = {
+        backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [
+          {
+            offset: 0,
+            color: '#431ab8'
+          },
+          {
+            offset: 1,
+            color: '#471bba'
+          }
+        ]),
+        title: {
+          text: (value * 100).toFixed(0) + '{a|%}',
+          textStyle: {
+            fontSize: 50,
+            fontFamily: 'Microsoft Yahei',
+            fontWeight: 'normal',
+            color: '#bcb8fb',
+            rich: {
+              a: {
+                fontSize: 28
+              }
+            }
+          },
+          x: 'center',
+          y: '35%'
+        },
+        graphic: [
+          {
+            type: 'group',
+            left: 'center',
+            top: '60%',
+            children: [
+              {
+                type: 'text',
+                z: 100,
+                left: '10',
+                top: 'middle',
+                style: {
+                  fill: '#aab2fa',
+                  text: '流量统计',
+                  font: '20px Microsoft YaHei'
+                }
+              }
+            ]
+          }
+        ],
+        series: [
+          {
+            type: 'liquidFill',
+            radius: '80%',
+            center: ['50%', '50%'],
+            //  shape: 'roundRect',
+            data: data,
+            backgroundStyle: {
+              color: {
+                type: 'linear',
+                x: 1,
+                y: 0,
+                x2: 0.5,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 1,
+                    color: 'rgba(68, 145, 253, 0)'
+                  },
+                  {
+                    offset: 0.5,
+                    color: 'rgba(68, 145, 253, .25)'
+                  },
+                  {
+                    offset: 0,
+                    color: 'rgba(68, 145, 253, 1)'
+                  }
+                ],
+                globalCoord: false
+              }
+            },
+            outline: {
+              borderDistance: 0,
+              itemStyle: {
+                borderWidth: 20,
+                borderColor: {
+                  type: 'linear',
+                  x: 0,
+                  y: 0,
+                  x2: 0,
+                  y2: 1,
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: 'rgba(69, 73, 240, 0)'
+                    },
+                    {
+                      offset: 0.5,
+                      color: 'rgba(69, 73, 240, .25)'
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(69, 73, 240, 1)'
+                    }
+                  ],
+                  globalCoord: false
+                },
+                shadowBlur: 10,
+                shadowColor: '#000'
+              }
+            },
+            // color: {
+            //   type: 'linear',
+            //   x: 0,
+            //   y: 0,
+            //   x2: 0,
+            //   y2: 1,
+            //   colorStops: [
+            //     {
+            //       offset: 1,
+            //       color: 'rgba(58, 71, 212, 0)'
+            //     },
+            //     {
+            //       offset: 0.5,
+            //       color: 'rgba(31, 222, 225, .2)'
+            //     },
+            //     {
+            //       offset: 0,
+            //       color: 'rgba(31, 222, 225, 1)'
+            //     }
+            //   ],
+            //   globalCoord: false
+            // },
+            color: ['rgba(58, 71, 212, 0)','rgba(31, 222, 225, .2)','rgba(31, 222, 225, 1)'],
+            label: {
+              normal: {
+                formatter: ''
+              }
+            }
+          }
+        ]
+      };
+      let chart = echarts.init(document.getElementById('echarts16'));
+      chart.setOption(option);
+    },
+    initCurveStyle() {
+      //数据
+      var XName = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13',
+        '14',
+        '15',
+        '16',
+        '17',
+        '18',
+        '19',
+        '20',
+        '21',
+        '22',
+        '23',
+        '24'
+      ];
+      var data1 = [
+        [
+          50,
+          52,
+          52,
+          52,
+          52,
+          58,
+          52,
+          55,
+          44,
+          52,
+          52,
+          52,
+          33,
+          52,
+          52,
+          52,
+          20,
+          52,
+          52,
+          52,
+          52,
+          52,
+          55,
+          52,
+          52,
+          23,
+          52,
+          52,
+          52,
+          52,
+          52
+        ],
+        [
+          98,
+          67,
+          62,
+          76,
+          99,
+          71,
+          24,
+          80,
+          67,
+          57,
+          54,
+          66,
+          39,
+          48,
+          41,
+          32,
+          98,
+          65,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+        ],
+        [
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          ,
+          65,
+          57,
+          81,
+          41,
+          72,
+          92,
+          51,
+          74,
+          46,
+          38,
+          59,
+          63,
+          60,
+          56
+        ]
+      ];
+      var Line = ['昨日', '当日', '预测'];
+      var img = [
+        'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABRCAYAAABFTSEIAAAACXBIWXMAAAsSAAALEgHS3X78AAAEp0lEQVR42u3cz4sjRRTA8W9Vd3Vn8mMmjj9WQWSRZQ+CsH+B7MnDIgiCd0E8CYJ/gOAIelo8ehUP/gF6WLw5/gMueFP2sIcF0dHd2Z1kknR11fOQZJJJMtlZd03H7HtQpNOTnpn+8Lrm1etmjIig8e/DKoECKqACKqCGAiqgAiqghgIqoAIqoIYCKqACKqCGAiqgAiqghgIqoAJudKTr+osZMNPvBUQBHwHsPF9fB9R0DeHMOQ6T6WOrhEzXBM4swDOL0M6CrArRVoq3t2dGUIb9fTvatg8ZZup1PDBgzPmy98mey6qfzjLz2WaWjEUZKEvGyi9nWyneMOvGIyFQo2Sbg4MUSChpU9IeTTUpJdsEajPZOJeJG5uBZj7rLLduWS5dGm6XNLEELOFUFj54ACJCaychkpDSASK3bwsXL0YgVpWJKwM0iy9Zy8HdGru7jvt3Pbu7w0wES7drTwAbjTHMGCsQcIAnYTC1/wRx0wEnl27JNgZI8HQ6Kc1mQq83RNzaMjPzXqDbjTQaJRFLxIyyMSxAXEkWrhrQzAAmo5HOjCQf7jflILxOkohL+aUPgV4vEGNJo+E5PAy02+UIMEwBxo0CPDP7Dg5SnEtpt1PA0e87XO25FOoh8IYIH2Y5b45RzGAQBiIltZoHxqMcjbksXAVgdc2EQMYzzzdotyeZWKuleULXJtwT4SODfC2QCWR+IF9KnjuX1Xbo99Op7LVE8iXlz0YBTk5SyLEEjo5OLuccEoFUvHfO+reuUPx4zftXAIcx1hdcF+/TvFab4A0Bs0VwqyhpVnkJT89/Q4DDQ0e77YCMwIUsFMeFZD856699URRvX4nxE4A/jbnxXp7v4Zw3ReGNSDHI8wFQjIafuoyn58L/fB6sth/Ybg9fez2TRC6QZcZYvgHsazF+MP7YCyLXcM7gvSXLDGBqYDg+NhwdmSpPoTrAkub0W+f4FSB1fDucIunMHSLpO8WAH0rSy8u+19MBCHB4OHzd2pI+CEUhpigEiN+l6WcdY252jLn5s7Wf472ImPcN8pUl/tEHoV4XWq1Ke4KrLmPsTA3oODpytFoOyJKSyzHyMSIxteWngMW5cSEdDJQUhTdZVgxOz3/+jFJm4+bA2e5JpNU6WZ4Fw99JwnWMKccwpeddP+B7GZTNUPKqybJy0O+Hs1YfMz9swwvpB8fbGDG0GuGkkK7V0hxSmZQpABI8l2z0v3sJf50qpAMJCd2qCulql3LD1lRGQjm7lEsDz0rkxTQOfiPPxUBcuJTbbhss/Y1eyi3NwsmKInmkZsKk5gtPUzNhvp11507CSy/X6XYStpvFudpZw1ZWIOF4Cq6SdtbKbioJyAhRTu3u9yMJXerN+ugvaQQsjcZ8Q3VnZwxlSDhe1lB9GjrSw5b+1avT8+Jw+979nNaOI6U3KpTrWAosxVQmygK4ld8X0ZtK/7eViExD7O1NQPb3T7fsl4/4sBpwYzPwjFbTo95Yl9l9Vd1YN1X/147HebSjary1AHyc5qc+XLQEQx9ve8Kg6xr6hKoCKqACKqCGAiqgAiqghgIqoAIqoIYCKqACKqCGAiqgAiqghgIq4JrHP8fEWV8FMTmOAAAAAElFTkSuQmCC',
+        'image://data:image/png;base64,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',
+        'image://data:image/png;base64,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',
+        'image://data:image/png;base64,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'
+      ];
+      var color = ['#00f8ff', '#00f15a', '#0696f9', '#dcf776'];
+      //数据处理
+      var datas = [];
+      Line.map((item, index) => {
+        datas.push({
+          symbolSize: 150,
+          symbol: img[index],
+          name: item,
+          type: 'line',
+          smooth: true,
+          yAxisIndex: 1,
+          lineStyle: {
+            type: index === 2 ? 'dashed' : 'solid'
+          },
+          data: data1[index],
+          itemStyle: {
+            normal: {
+              borderWidth: 5,
+              color: color[index]
+            }
+          }
+        });
+      });
+      let option = {
+        backgroundColor: '#043065',
+        grid: {
+          left: '5%',
+          top: '5%',
+          bottom: '12%',
+          right: '5%'
+        },
+        legend: {
+          type: 'scroll',
+          data: Line,
+          itemWidth: 18,
+          itemHeight: 12,
+          textStyle: {
+            color: '#fff',
+            fontSize: 14
+          },
+          top: '5',
+          right: '50'
+        },
+        yAxis: [
+          {
+            type: 'value',
+            position: 'right',
+            splitLine: {
+              show: false
+            },
+            axisLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            }
+          },
+          {
+            type: 'value',
+            position: 'left',
+            nameTextStyle: {
+              color: '#00FFFF'
+            },
+            splitLine: {
+              show: false,
+              lineStyle: {
+                type: 'dashed',
+                color: 'rgba(135,140,147,0.8)'
+              }
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(135,140,147,0.8)'
+              }
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              formatter: '{value}',
+              color: '#fff',
+              fontSize: 14
+            }
+          }
+        ],
+        xAxis: [
+          {
+            type: 'category',
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(135,140,147,0.8)'
+              }
+            },
+            axisLabel: {
+              inside: false,
+              textStyle: {
+                color: '#fff', // x轴颜色
+                fontWeight: 'normal',
+                fontSize: '14',
+                lineHeight: 22
+              }
+            },
+            data: XName
+          },
+          {
+            type: 'category',
+            axisLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: false
+            },
+            splitArea: {
+              show: false
+            },
+            splitLine: {
+              show: false
+            },
+            //-----
+            data: ['1月', '2月', '3月', '4月', '5月', '6月']
+          }
+        ],
+        series: datas
+      };
+      //当点击legend选项时折线上的小图片会消失，为避免这种情况，可以采取以下初始化方法 使用svg
+      var chart = echarts.init(document.getElementById('echarts17'), null, {
+        renderer: 'svg'
+      });
+      chart.clear();
+      chart.setOption(option);
     }
   },
   created() {}, // 在模板渲染成html或者模板编译进路由前调用created
@@ -3542,6 +5119,29 @@ export default {
      * 树图
      */
     this.initTree();
+    /**
+     * 桑基图
+     */
+    this.initSankey();
+    /**
+     * 单柱状图
+     */
+    this.initBarStyle1();
+    this.initBarStyle2();
+    this.initBarStyle3();
+    this.initBarStyle4();
+    /**
+     * 多柱状图
+     */
+    this.initMulticyBarStyle();
+    /**
+     * 水位图
+     */
+    this.initWaterLevelStyle();
+    /**
+     * 曲线图
+     */
+    this.initCurveStyle();
   }
 };
 </script>
