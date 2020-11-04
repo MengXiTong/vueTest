@@ -14,8 +14,15 @@ module.exports = {
         target: 'http://39.97.230.169:9096', //测试环境代理
         changeOrigin: true, //跨域的话，代理转发请求
         pathRewrite: {
-          // '^/api': '/api'
+          '^/api': '/api'
         }
+      },
+      '/tmap':{
+        target: 'http://10.35.207.185:8080', //测试天地图
+        changeOrigin: true, //跨域的话，代理转发请求
+        pathRewrite: {
+          '^/tmap': ''   //测试天地图去掉tmap字段
+        },
       }
     },
 

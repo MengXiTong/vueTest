@@ -42,11 +42,27 @@
         <button @click="showOverFunction">测试</button>
       </el-collapse-item>
     </el-collapse>
+    <div class="nav">
+      <!-- <el-scrollbar :vertical="false" class="scroll-container">
+        <ul class="clearfix">
+          <li class="fl" v-for="(i,index) in list" :key="index" v-text="i"></li>
+        </ul>
+      </el-scrollbar> -->
+      <!-- <scroll-view>
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item :index="index" v-for="(i,index) in list" :key="index">{{i}}</el-menu-item>
+        </el-menu>
+      </scroll-view> -->
+      <el-scrollbar ref="scrollContainer" :vertical="false" class="scroll-container" @wheel.native.prevent="handleScroll">
+        <div class="nav-item" v-for="(i,index) in list" :key="index" v-text="i"></div>
+      </el-scrollbar>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from '@/api/axios';
+import ScrollView from '@/components/ScrollView';
 
 export default {
   data() {
@@ -147,8 +163,41 @@ export default {
         }
       },
       show: false,
-      checkList: []
+      checkList: [],
+      list: [
+        '菜单1',
+        '菜单2',
+        '菜单3',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1',
+        '菜单1'
+      ]
     };
+  },
+  computed: {
+    scrollWrapper() {
+      return this.$refs.scrollContainer.$refs.wrap;
+    }
   },
   methods: {
     changeMsg() {
@@ -180,9 +229,17 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    handleScroll(e) {
+      console.log(e);
+      const eventDelta = e.wheelDelta || -e.deltaY * 40;
+      const $scrollWrapper = this.scrollWrapper;
+      $scrollWrapper.scrollLeft = $scrollWrapper.scrollLeft + eventDelta / 4;
     }
   },
-  components: {},
+  components: {
+    ScrollView
+  },
   mounted() {
     console.log('测试先后：mounted');
   },
@@ -223,5 +280,88 @@ export default {
 .fade-leave-to {
   opacity: 0;
   transform: translateX(-30px);
+}
+
+.scroll-container {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /deep/.el-scrollbar__bar {
+    bottom: 0px;
+  }
+}
+
+.clearfix {
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+.nav {
+  line-height: 50px;
+  height: 50px;
+  background-color: #218ad4;
+  color: white;
+  cursor: pointer;
+
+  ul {
+    height: 50px;
+    width: 1000000px;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: relative;
+
+    &.active {
+      background-color: #177cc3;
+
+      &::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 6px solid #eceff1;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc((100% - 16px) / 2);
+      }
+    }
+
+    &:hover {
+      background-color: #177cc3;
+    }
+  }
+
+  .nav-item {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    // position: relative;
+
+    &.active {
+      background-color: #177cc3;
+
+      &::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 6px solid #eceff1;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc((100% - 16px) / 2);
+      }
+    }
+
+    &:hover {
+      background-color: #177cc3;
+    }
+  }
 }
 </style>

@@ -23,13 +23,15 @@
             <Icon type="ios-paper"></Icon>高德地图测试</MenuItem>
             <MenuItem name="9" to="/leafletMapTest">
             <Icon type="ios-paper"></Icon>leaflet地图测试</MenuItem>
-            <MenuItem name="10" to="/BMapTest">
+            <MenuItem name="10" to="/TMapTest">
+            <Icon type="ios-paper"></Icon>天地图测试</MenuItem>
+            <MenuItem name="11" to="/BMapTest">
             <Icon type="ios-paper"></Icon>百度地图测试</MenuItem>
-            <MenuItem name="11" to="/createjsTest">
+            <MenuItem name="12" to="/createjsTest">
             <Icon type="ios-paper"></Icon>动画背景</MenuItem>
-            <MenuItem name="12" to="/dataV">
+            <MenuItem name="13" to="/dataV">
             <Icon type="ios-paper"></Icon>dataV测试</MenuItem>
-            <MenuItem name="13" to="/iframeTest">
+            <MenuItem name="14" to="/iframeTest">
             <Icon type="ios-paper"></Icon>iframe测试</MenuItem>
           </Menu>
         </Sider>

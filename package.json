@@ -21,6 +21,7 @@
     "echarts": "^4.2.1",
     "echarts-liquidfill": "^2.0.5",
     "element-ui": "^2.4.11",
+    "esri-loader": "^2.15.0",
     "html2canvas": "^1.0.0-rc.5",
     "iview": "^3.2.1",
     "jquery": "^3.3.1",

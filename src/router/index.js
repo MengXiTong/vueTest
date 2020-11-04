@@ -103,6 +103,14 @@ export default new Router({
           }
         },
         {
+          path: '/TMapTest',
+          name: 'TMapTest',
+          component: resolve => require(['@/pages/TMapTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
+        },
+        {
           path: '/leafletMapTest',
           name: 'leafletMapTest',
           component: resolve => require(['@/pages/leafletMapTest'], resolve),
