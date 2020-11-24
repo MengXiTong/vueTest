@@ -17,6 +17,22 @@
             <Icon type="ios-paper"></Icon>VUE测试</MenuItem>
             <MenuItem name="6" to="/lodashTest">
             <Icon type="ios-paper"></Icon>Lodash测试</MenuItem>
+            <MenuItem name="7" to="/jsTest">
+            <Icon type="ios-paper"></Icon>纯JS测试</MenuItem>
+            <MenuItem name="8" to="/mapTest">
+            <Icon type="ios-paper"></Icon>高德地图测试</MenuItem>
+            <MenuItem name="9" to="/leafletMapTest">
+            <Icon type="ios-paper"></Icon>leaflet地图测试</MenuItem>
+            <MenuItem name="10" to="/TMapTest">
+            <Icon type="ios-paper"></Icon>天地图测试</MenuItem>
+            <MenuItem name="11" to="/BMapTest">
+            <Icon type="ios-paper"></Icon>百度地图测试</MenuItem>
+            <MenuItem name="12" to="/createjsTest">
+            <Icon type="ios-paper"></Icon>动画背景</MenuItem>
+            <MenuItem name="13" to="/dataV">
+            <Icon type="ios-paper"></Icon>dataV测试</MenuItem>
+            <MenuItem name="14" to="/iframeTest">
+            <Icon type="ios-paper"></Icon>iframe测试</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">
@@ -35,55 +51,49 @@
 </template>
 
 <script>
-  import {
-    mapGetters,
-    mapState
-  } from "vuex";
-  import uiHeader from "@/components/uiHeader";
-  import store from "@/store/index";
-  import {
-    testTitle,
-    setTitle
-  } from "@/mixins/testMixins";
-  import show from "@/mixins/classMixins";
-  import vueMixins from "@/mixins/vueMixins";
+import { mapGetters, mapState } from 'vuex';
+import uiHeader from '@/components/uiHeader';
+import store from '@/store/index';
+import { testTitle, setTitle } from '@/mixins/testMixins';
+import show from '@/mixins/classMixins';
+import vueMixins from '@/mixins/vueMixins';
 
-  export default {
-    store: store,
-    name: "index",
-    data() {
-      return {
-        msg: "Welcome to Your Vue.js App",
-        url: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2700762404,3403418546&fm=26&gp=0.jpg"
-      };
-    },
-    components: {
-      // uiHeader: (resolve, reject) => {
-      //   require(["@/components/uiHeader"], resolve);
-      // }
-      uiHeader
-    },
-    mixins: [vueMixins],
-    computed: {
-      ...mapState({
-        count: state => state.count.count
-      })
-    },
-    methods: {
-      navigateTo(name) {
-        this.$router.replace({
-          name
-        });
-      }
-    },
-    created() {},
-    mounted() {
-      console.log(testTitle);
-      let showNow = new show();
-      console.log(showNow.title);
+export default {
+  store: store,
+  name: 'index',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      url:
+        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2700762404,3403418546&fm=26&gp=0.jpg'
+    };
+  },
+  components: {
+    // uiHeader: (resolve, reject) => {
+    //   require(["@/components/uiHeader"], resolve);
+    // }
+    uiHeader
+  },
+  mixins: [vueMixins],
+  computed: {
+    ...mapState({
+      count: state => state.count.count
+    })
+  },
+  methods: {
+    navigateTo(name) {
+      this.$router.replace({
+        name
+      });
     }
-  };
-
+  },
+  created() {},
+  mounted() {
+    console.log(testTitle);
+    let showNow = new show();
+    console.log(showNow.title);
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -11,10 +11,21 @@ import ElementUI from "element-ui";
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import "element-ui/lib/theme-chalk/index.css";
+import "@ztree/ztree_v3/js/jquery.ztree.core.min.js";
+import "@ztree/ztree_v3/js/jquery.ztree.excheck.min.js";
+import "@ztree/ztree_v3/css/zTreeStyle/zTreeStyle.css";
+import "./lib/util";
+import 'babel-polyfill';
+import 'echarts/extension/bmap/bmap';
+import dataV from '@jiaminghi/data-view'
+
+import overFunction from "@/components/utils/overFunction";
+Vue.use(overFunction);
 
 Vue.use(ElementUI);
 Vue.use(iView);
-Vue.use(VueI18n)
+Vue.use(VueI18n);
+Vue.use(dataV);
 const i18n = new VueI18n({ locale: 'zh_CN', })
 Vue.use(VeeValidate, {
   i18n,
@@ -28,6 +39,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  render: createElement => createElement(App)
+  // components: { App },
+  // template: '<App/>'
 })
