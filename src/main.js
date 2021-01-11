@@ -17,7 +17,8 @@ import "@ztree/ztree_v3/css/zTreeStyle/zTreeStyle.css";
 import "./lib/util";
 import 'babel-polyfill';
 import 'echarts/extension/bmap/bmap';
-import dataV from '@jiaminghi/data-view'
+import dataV from '@jiaminghi/data-view';
+import './components/ef/index.css'
 
 import overFunction from "@/components/utils/overFunction";
 Vue.use(overFunction);

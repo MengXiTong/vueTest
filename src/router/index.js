@@ -141,6 +141,14 @@ export default new Router({
           meta: {
             keepAlive: true // 需要缓存
           }
+        },
+        {
+          path: '/easyFlowTest',
+          name: 'easyFlowTest',
+          component: resolve => require(['@/pages/easyFlowTest'], resolve),
+          meta: {
+            keepAlive: true // 需要缓存
+          }
         }
       ]
     },
