@@ -6,15 +6,13 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   base: __dirname,
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'index',
       component: resolve => require(['@/pages/index'], resolve), //这种方式进行懒加载已经Out了
       // () => import(/* webpackChunkName: "index" */ '@/pages/index') 建议使用这种
       // resolve => require.ensure([], () => resolve(require('@/pages/index')), 'index');
-      children: [
-        {
+      children: [{
           path: '/userInfo',
           name: 'userInfo',
           component: resolve => require(['@/pages/userInfo'], resolve),
@@ -53,14 +51,19 @@ export default new Router({
           meta: {
             keepAlive: true // 需要缓存
           },
-          children: [
-            {
+          children: [{
               path: 'routerTest',
               name: 'routerTest',
               components: {
-                default: { template: '<div>default内容</div>' },
-                left: { template: '<div>left内容</div>' },
-                right: { template: '<div>right内容</div>' }
+                default: {
+                  template: '<div>default内容</div>'
+                },
+                left: {
+                  template: '<div>left内容</div>'
+                },
+                right: {
+                  template: '<div>right内容</div>'
+                }
               }
             },
             {
@@ -155,33 +158,45 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "login" */ '@/pages/login')
+      component: () =>
+        import ( /* webpackChunkName: "login" */ '@/pages/login')
     },
     {
       path: '/layout',
       name: 'layout',
       component: () =>
-        import(/* webpackChunkName: "layout" */ '@/pages/layout'),
-      children: [
-        {
+        import ( /* webpackChunkName: "layout" */ '@/pages/layout'),
+      children: [{
           path: 'manage',
           name: 'manage',
           component: () =>
-            import(/* webpackChunkName: "manage" */ '@/pages/manage')
+            import ( /* webpackChunkName: "manage" */ '@/pages/manage')
         },
         {
           path: 'privilege',
           name: 'privilege',
           component: () =>
-            import(/* webpackChunkName: "privilege" */ '@/pages/privilege')
+            import ( /* webpackChunkName: "privilege" */ '@/pages/privilege')
         },
         {
           path: 'statistics',
           name: 'statistics',
           component: () =>
-            import(/* webpackChunkName: "statistics" */ '@/pages/statistics')
+            import ( /* webpackChunkName: "statistics" */ '@/pages/statistics')
         }
       ]
+    },
+    {
+      path: '/DPSY0001',
+      name: 'DPSY0001',
+      component: () =>
+        import ( /* webpackChunkName: "DPSY0001" */ '@/pages/DPSY0001')
+    },
+    {
+      path: '/DPSY0003',
+      name: 'DPSY0003',
+      component: () =>
+        import ( /* webpackChunkName: "DPSY0003" */ '@/pages/DPSY0003')
     }
   ]
 });

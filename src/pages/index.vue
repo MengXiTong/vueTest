@@ -35,6 +35,10 @@
             <Icon type="ios-paper"></Icon>iframe测试</MenuItem>
             <MenuItem name="15" to="/easyFlowTest">
             <Icon type="ios-paper"></Icon>easyFlow测试</MenuItem>
+            <MenuItem name="16" to="/DPSY0001">
+            <Icon type="ios-paper"></Icon>中南钢铁大屏1</MenuItem>
+            <MenuItem name="17" to="/DPSY0003">
+            <Icon type="ios-paper"></Icon>中南钢铁大屏2</MenuItem>
           </Menu>
         </Sider>
         <Content :style="{padding: '24px', minHeight: 'calc(100vh - 132px)', background: '#fff'}">
