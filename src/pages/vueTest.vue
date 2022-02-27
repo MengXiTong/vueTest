@@ -22,8 +22,12 @@
       </el-collapse-item>
       <el-collapse-item title="transition的使用" name="2">
         <button @click="show = !show">show/hide text</button>
-        <transition name="fade">
-          <p v-if="show">Hello Worid</p>
+        <transition name="fade" mode="out-in">
+          <p v-if="show" key="1">111111</p>
+          <p v-else key="2">222222</p>
+        </transition>
+        <transition name="fadebounce">
+          <p v-show="show">Hello Worid</p>
         </transition>
       </el-collapse-item>
       <el-collapse-item title="复选框使用" name="3">
@@ -40,6 +44,10 @@
       </el-collapse-item>
       <el-collapse-item title="使用Vue全局函数" name="5">
         <button @click="showOverFunction">测试</button>
+      </el-collapse-item>
+      <el-collapse-item title="父子组件传值" name="6">
+        <button @click="comChange">父change</button>
+        <son-component :list="comList" :str="comStr" :obj="comObj" @changeVal="sonComChange"></son-component>
       </el-collapse-item>
     </el-collapse>
     <div class="nav">
@@ -63,6 +71,7 @@
 <script>
 import axios from '@/api/axios';
 import ScrollView from '@/components/ScrollView';
+import sonComponent from '@/components/sonComponent';
 
 export default {
   data() {
@@ -191,7 +200,10 @@ export default {
         '菜单1',
         '菜单1',
         '菜单1'
-      ]
+      ],
+      comList: ['111'],
+      comStr: '111',
+      comObj: {name: '111'}
     };
   },
   computed: {
@@ -235,10 +247,22 @@ export default {
       const eventDelta = e.wheelDelta || -e.deltaY * 40;
       const $scrollWrapper = this.scrollWrapper;
       $scrollWrapper.scrollLeft = $scrollWrapper.scrollLeft + eventDelta / 4;
+    },
+    comChange(){
+      // this.comList.push('222');
+      this.comList = ['222'];
+      this.comStr = '222';
+      this.comObj = {name: '222'};
+      // this.comObj.name = '222';
+      console.log(this.comList,this.comStr,this.comObj);
+    },
+    sonComChange(){
+      console.log(this.comList,this.comStr,this.comObj);
     }
   },
   components: {
-    ScrollView
+    ScrollView,
+    sonComponent
   },
   mounted() {
     console.log('测试先后：mounted');
@@ -269,17 +293,32 @@ export default {
 // }
 .fade-leave-active,
 .fade-enter-active {
-  transition: all 0.25s;
+  transition: all 1.5s;
 }
 
-.fade-enter {
+.fade-enter,.fade-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(100px);
 }
 
-.fade-leave-to {
-  opacity: 0;
-  transform: translateX(-30px);
+.fadebounce-enter-active{
+  animation: bounce-in .5s;
+}
+
+.fadebounce-leave-active{
+  animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 .scroll-container {

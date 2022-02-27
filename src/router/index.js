@@ -197,6 +197,10 @@ export default new Router({
       name: 'DPSY0003',
       component: () =>
         import ( /* webpackChunkName: "DPSY0003" */ '@/pages/DPSY0003')
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 });
